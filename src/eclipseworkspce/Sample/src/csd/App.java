@@ -1,16 +1,37 @@
 /*----------------------------------------------------------------------------------------------------------------------
-	Anahatar Notlar: Her ne kadar değişken isimlendirmede UNICODE alfabetik karakterler kullanılabilse de programlamada
-	yalnızca İngilizce alfabedeki 26 karakterin kulanılması iyi bir tekniktir. Ayrıca değişken isimlerine ilişkin kelimelerin de
-	İngilizce olarak seçilmesi önerilir. Biz de bu "convention"'a uygun kodlar yazacağız
+	return deyimi nasıl kullanılırsa kullanılsın metodu sonlandırır. Aşağıdaki örnekte return deyiminde sonra akış
+	metot içerisinde kalmayacağından error oluşur
 -----------------------------------------------------------------------------------------------------------------------*/
 package csd;
 
 class App {
 	public static void main(String [] args)
-	{		
-		int öğrencisayısı = 10;			
+	{	
+		int a;
 		
-		System.out.println(öğrencisayısı);
+		a = Util.sum() * 2;
+		
+		System.out.println(a);				
 	}
 }
 
+class Util {
+	public static int sum()
+	{
+		java.util.Scanner kb = new java.util.Scanner(System.in);
+		
+		System.out.print("Birinci sayıyı giriniz:");
+		int a = Integer.parseInt(kb.nextLine());
+		
+		System.out.print("İkinci sayıyı giriniz:");
+		int b = Integer.parseInt(kb.nextLine());
+		
+		int result;
+		
+		result = a + b;
+		
+		return result;
+		
+		System.out.println("Unreachable code"); //error
+	}
+}
