@@ -1,22 +1,21 @@
 /*----------------------------------------------------------------------------------------------------------------------
-	return deyimi nasıl kullanılırsa kullanılsın metodu sonlandırır. Aşağıdaki örnekte return deyiminde sonra akış
-	metot içerisinde kalmayacağından error oluşur
+	void metotlar geri dönüş değeri varmış gibi çağrılamaz. Yani void metot çağrısı geri dönüş değeri varmış gibi 
+	işleme sokulamaz
 -----------------------------------------------------------------------------------------------------------------------*/
 package csd;
 
 class App {
 	public static void main(String [] args)
 	{	
-		int a;
+		int result;
 		
-		a = Util.sum() * 2;
-		
-		System.out.println(a);				
+		result = Util.printSum(); //error
 	}
 }
 
+
 class Util {
-	public static int sum()
+	public static void printSum()
 	{
 		java.util.Scanner kb = new java.util.Scanner(System.in);
 		
@@ -24,14 +23,12 @@ class Util {
 		int a = Integer.parseInt(kb.nextLine());
 		
 		System.out.print("İkinci sayıyı giriniz:");
-		int b = Integer.parseInt(kb.nextLine());
-		
+		int b = Integer.parseInt(kb.nextLine());		
 		int result;
 		
-		result = a + b;
+		result = a + b;	
 		
-		return result;
-		
-		System.out.println("Unreachable code"); //error
+	
+		System.out.println(result);
 	}
 }
