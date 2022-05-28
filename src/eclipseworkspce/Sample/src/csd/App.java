@@ -1,22 +1,51 @@
 /*----------------------------------------------------------------------------------------------------------------------
-	printf metodunda tamsayı türlerinin (short, int, long, byte) hexadecimal olarak formatlanması için x, X, h, H 
-	format karakteri kullanılır. Ayrıca o (küçük O harfi) format karakteri ile tamsayı türleri octal olarak formatlanabilir 
+	Sınıf Çalışması: Klavyeden girilen iki tane int türden sayının toplamını, çarpımını ve farkını aşağıdaki gibi
+	ekrana basan programı yazınız:
+	Girilen sayılar 10 ve 20 ise
+		10 + 20 = 30
+		10 * 20 = 200
+		10 - 20 = -10
+	şeklinde ekran çıktısı olacaktır
 -----------------------------------------------------------------------------------------------------------------------*/
 package csd;
 
 class App {
 	public static void main(String [] args)
 	{	
-		java.util.Scanner kb = new java.util.Scanner(System.in);
-		System.out.print("Bir sayı giriniz:");
-		int a = Integer.parseInt(kb.nextLine());
-		
-		System.out.printf("a = %d%n", a);
-		System.out.printf("a = %x%n", a);
-		System.out.printf("a = %X%n", a);
-		System.out.printf("a = %h%n", a);
-		System.out.printf("a = %H%n", a);
-		System.out.printf("a = %o%n", a);
+		FindSumMultiplySubtractApp.run();		
 	}
 }
 
+class FindSumMultiplySubtractApp {
+	public static void run()
+	{
+		java.util.Scanner kb = new java.util.Scanner(System.in);
+		System.out.print("Birinci sayıyı giriniz:");
+		int a = Integer.parseInt(kb.nextLine());
+		
+		System.out.print("İkinci sayıyı giriniz:");
+		int b = Integer.parseInt(kb.nextLine());
+		
+		System.out.printf("%d + %d = %d%n", a, b, NumberUtil.sum(a, b));
+		System.out.printf("%d * %d = %d%n", a, b, NumberUtil.multiply(a, b));
+		System.out.printf("%d - %d = %d%n", a, b, NumberUtil.subtract(a, b));
+	}
+}
+
+
+class NumberUtil {
+	public static int sum(int a, int b)
+	{
+		return a + b;
+	}
+	
+	public static int multiply(int a, int b)
+	{
+		return a * b;
+	}
+	
+	public static int subtract(int a, int b)
+	{
+		return a - b;
+	}
+}
