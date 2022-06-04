@@ -1,47 +1,66 @@
-/*-----------------------------------------------------------------------------------------------------------------------
-	  Sabitler:
-	  Program içerisinde doğrudan yazılan sayılara denir. Sabitlerin de türleri vardır. Derleyici sabitlerin türlerini
-	  tespit ederek işlem yapar.
-	  
-	  Sabitlerin türlerinin tespitine ilişkin detaylar:
-	  - Sayı nokta içermiyorsa, sonuna bir ek almamışsa ve int türü sınırları içerisindeyse int türdendir. Sayı int türü
-	  sınırları dışındaysa error oluşur. 
-	  Örnek: 100, 200, 1000000000
-	  
-	  - Sayı nokta içermiyorsa ve sonuna L (büyük veya küçük) ekini almışsa long türdendir. Sayı long türü sınırları 
-	  dışındaysa error oluşur
-	  Örneğin: 10L, 4000000000L
-	  
-	  Anahtar Notlar: Küçük harf L kullanımı 1(bir) rakamına benzemesinden dolayı programlamada tercih edilmez
-	  
-	  - Java'da byte ve short türden sabitler yoktur
-	  
-	  - Sayı nokta içeriyorsa ve sonuna bir ek almamışsa double türdendir. Sayı double olarak ifade edilemiyor ise 
-	  error oluşur.
-	  Örnek:3.4, 6.789
-	  
-	  - Sayı nokta içersin ya da içermesin sonuna D (büyük ya da küçük) ekini almışsa double türdendir. 
-	  Örneğin:
-	  3d, 4D, 4.5D
-	  
-	  - Sayı nokta içersin sonuna F (büyük ya da küçük) ekini almışsa float türdendir.
-	  Örneğin:
-	  3f, 4.567F
-	  
-	  - boolean türden iki tane sabit vardır: true, false
-	  
-	  - char türden sabitler: İki tane tek tırnak karakteri arasında yazılan bir karakter, karakter tablosunda sıra
-	  numarası belirtir. Bu şekilde yazılan sabitlere "karakter sabitleri (character literals)" denir ve bu sabitler char 
-	  türdendir. İki tane tek tırnak arasında özel durumlar dışında 1(bir)'den fazla karakter yazılması geçersizdir. 
-	  
+/*-----------------------------------------------------------------------------------------------------------------------	
+	Operatörler: Bir işleme yol açan ve işlem sonunda bir değer üreten atomlara operatör denir. Operatör ile birlikte 
+	işleme giren ifadelere "operand" denir.
+	
+	Operatörleri 3(üç) biçimde sınıflandırabiliriz:
+	1. İşlevlerine göre sınıflandırma:
+		- Aritmetik (arithmetic) operatörler
+		- Karşılaştırma (comparison) operatörleri
+		- Mantıksal (logical) operatörler
+		- Bitsel (bitwise) operatörler
+		- Özel amaçlı (special purpose) operatörler
+		
+	2. Operand sayısına göre sınıflandırma:
+		- Tek operandlı (unary)
+		- İki operandlı (binary)
+		- Üç operandlı (ternary)
+	3. Operatörün konumuna göre sınıflandırma:
+		- önek (prefix)
+		- araek (infix)
+		- sonek (postfix)
+		
+	Operatörün kısıtı (constraint)
+	Operatörün ürettiği değer (product value)
+	Operatörün yan etkisi (side effect) var mı?
+	Operatörün önceliği (precedence):
+	
+	a = b + c * d ifadesinin derleyici tarafında üretilen kodda yapılış sırası:
+	i1: c * d
+	i2: b + i1
+	i3: a = i2
+	
+	a = (b + c) * d ifadesinin derleyici tarafında üretilen kodda yapılış sırası:
+	i1: b + c
+	i2: i1 * d
+	i3: a = i2
+	
+	a = b + c - d ifadesinin derleyici tarafında üretilen kodda yapılış sırası:
+	i1: b + c
+	i2: i1 - d
+	i3: a = i2
+	
+	Anahtar Notlar: Java programcısı bir operatörlerin yukarıdaki durumları iyi bilmelidir. Yani bir 
+	operatörün öğrenilmesi için yukarıdaki durumların iyi bilinmesi gerekir.
+	
+	Anahtar Notlar: Bazı operatörler öncelilik doğrudan uymazlar. Bu tarz operatörlerin de uymadıkları durum için
+	nasıl çalıştığının bilinmesi gerekir. Şüphesiz bu operatörlerin öncelik kuralına uymadan işlem yapmasının da
+	bir gerekçesi (rationale) vardır.
+	
+	Anahtar Notlar: Operatör öncelik tablosu gruplandırma olarak düşünülebilir. Yani operatör öncelik tablosundaki
+	öncelik durumlarının yapılış biçimine ilişkin istisnaları olabilir. Şüphesiz bunun da bilinmesi gerekir. Operatör
+	öncelik tablosu algısal bakımdan kolaylaştırmak için vardır ve önemlidir	
 -----------------------------------------------------------------------------------------------------------------------*/
 package csd;
 
 class App {
 	public static void main(String [] args)
 	{
-		char c;
+		int a = 10, b = 20;
 		
-		c = ' ';
+		int c;
+		
+		c = b++;
+		
 	}
 }
+
