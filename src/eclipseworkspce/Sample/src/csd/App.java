@@ -1,15 +1,18 @@
 /*-----------------------------------------------------------------------------------------------------------------------	
-	-- operatörünün prefix kullanımında ürettiği değer yani işleme giren değer azaltılMAmış değerdir  	
+	Java'da void bir metot çağrısı "void expression" olarak ele alınır. Yani bir ifadedir ancak bir değer üretmez
 -----------------------------------------------------------------------------------------------------------------------*/
 package csd;
 
 class App {
 	public static void main(String [] args)
 	{
-		int i;
-		for (i = 0; i < 5; ++i)
-			System.out.println("Merhaba");
-		
-		System.out.printf("i = %d%n", i);
+		NumberUtil.print(10, 20);
+	}
+}
+
+class NumberUtil {
+	public static void print(int a, int b)
+	{
+		System.out.printf("%d, %d%n", a, b);
 	}
 }
