@@ -1,18 +1,26 @@
 /*-----------------------------------------------------------------------------------------------------------------------	
-	! operatörü flag değişkenlerle aşağıdaki gibi kullanılabilir. Kod sadece durumu göstermek için yazılmıştır	
+	Aşağıdaki örnekte else bir if deyimine ait olmadığından error oluşur
 -----------------------------------------------------------------------------------------------------------------------*/
 package csd;
 
 class App {
 	public static void main(String [] args)
 	{
-		boolean flag = false;
+		java.util.Scanner kb = new java.util.Scanner(System.in);
+		System.out.print("Bir sayı giriniz:");
+		int a = kb.nextInt();
 		
-		//...
+		if (a % 2 == 0); {;
+			a /= 2;
+		}
 		
-		flag = !flag;
+		else //error
+			a *= 2;
 		
 		
-		System.out.printf("flag = %b%n", flag);
+		System.out.printf("a = %d%n", a);
+		
+		System.out.println("Tekrar yapıyor musunuz?");		
 	}
 }
+
