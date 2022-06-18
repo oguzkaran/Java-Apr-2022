@@ -1,44 +1,19 @@
 /*-----------------------------------------------------------------------------------------------------------------------	
-	Sınıf Çalışması: Parametresi ile aldığı int türden bir sayının basamakları toplamını döndüren sumDigits isimli metodu
-	NumberUtil isimli sınıf içerisinde yazınız ve aşağıdaki kod ile test ediniz. Metot nagatif sayılar için basamakları 
-	toplamını pozitif olarak döndürecektir
+	for döngü deyimi birinci kısmında bildirilen değişken for döngü deyimi boyunca görülebilirdir
 -----------------------------------------------------------------------------------------------------------------------*/
 package csd;
 
 class App {
 	public static void main(String [] args)
 	{
-		SumDigitsTest.run();
-	}
-}
-
-class SumDigitsTest {	
-	public static void run()
-	{
 		java.util.Scanner kb = new java.util.Scanner(System.in);
-		
-		int a;
 		System.out.print("Bir sayı giriniz:");
+		int n = kb.nextInt();	
 		
-		while ((a = Integer.parseInt(kb.nextLine())) != 0) {
-			System.out.printf("%d sayısının basamakları toplamı:%d%n", a, NumberUtil.sumDigits(a));			
-			System.out.print("Bir sayı giriniz:");
-		}		
+		for (int i = 0; i < n; ++i)
+			System.out.printf("%d ", i);
 		
-		System.out.println("Tekrar yapıyor musunuz?");		
-	}
-}
-
-class NumberUtil {
-	public static int sumDigits(int a)
-	{
-		int sum = 0;
-		
-		while (a != 0) {
-			sum += a % 10;
-			a /= 10;			
-		}
-		
-		return Math.abs(sum);
+		System.out.println();
+		System.out.printf("Döngü sonrası i = %d%n", i); //error
 	}
 }
