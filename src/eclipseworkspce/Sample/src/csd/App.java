@@ -14,6 +14,6 @@ class App {
 			System.out.printf("%d ", i);
 		
 		System.out.println();
-		System.out.printf("Döngü sonrası i = %d%n", i); //error
+		
 	}
 }
