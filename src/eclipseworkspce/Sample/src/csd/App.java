@@ -1,66 +1,30 @@
 /*-----------------------------------------------------------------------------------------------------------------------	
-	Sınıf Çalışması: Parametresi ile aldığı int türden bir sayıdan büyük ilk asal sayıyı döndüren getNextPrime isimli 
-	metodu yazınız ve aşağıdaki kod ile test ediniz
-	Açıklamalar:
-		- isPrime metodunun hızlı versiyonunun, "hızlı" olduğu bilinciyle getPrime metodunu yazınız				
+	continue deyimi döngüyü değil döngünün o anki adımını sonlandırır. continue deyiminin de etiketli biçimi vardır. Ancak
+	yapısal programlama ve nesne yönelimli programlama açısından kullanımı tavsiye edilmez. continue deyiminin etitketsiz
+	biçimi break deyimi kadar sık kullanılmasa da bazı durumlarda okunabilirliği/algılanabilirliği artırır. continue
+	deyimi yalnızca döngü deyimlerinde kullanılabilir
+	
+	Aşağıdaki örnekte 1 ile klavyeden girilen sayı arasındaki çift sayılar continue deyimi kullanılarak ekrana 
+	bastırılmıştır. Şüphesiz daha kolay yazılabilir. Sadece constinue deyiminin çalışma prensibinin anlaşılabilmesi için 
+	bu şekilde yazılmıştır
 -----------------------------------------------------------------------------------------------------------------------*/
 package csd;
 
 class App {
 	public static void main(String [] args)
-	{
-		GetNextPrimeTest.run();
-	}
-}
-
-class GetNextPrimeTest {
-	public static void run()
-	{
+	{	
 		java.util.Scanner kb = new java.util.Scanner(System.in);
+		System.out.print("Bir sayı giriniz:");
+		int n = kb.nextInt();
 		
-		for (;;) {
-			System.out.print("Bir sayı giriniz:");
-			int n = Integer.parseInt(kb.nextLine());
+		for (int i = 1; i <= n; ++i) {
+			if (i % 2 != 0)
+				continue;
 			
-			if (n <= 0) {
-				System.out.println("Tekrar yapıyor musunuz?");
-				return;
-			}
-			
-			System.out.printf("%d. asal sayı:%d%n", n, NumberUtil.getPrime(n));
+			System.out.printf("%d ", i);
 		}
 		
-	}
-}
-
-class NumberUtil {
-	public static long getNextPrime(int n)
-	{		
-		//TODO:
-	}
-	
-	public static boolean isPrime(long a)
-	{
-		if (a <= 1)
-			return false;
-		
-		if (a % 2 == 0)
-			return a == 2;
-		
-		if (a % 3 == 0)
-			return a == 3;
-		
-		if (a % 5 == 0)
-			return a == 5;
-		
-		if (a % 7 == 0)
-			return a == 7;
-		
-		for (long i = 11; i * i <= a; i += 2)
-			if (a % i == 0)
-				return false;
-		
-		return true;
+		System.out.println();
 	}
 }
 
