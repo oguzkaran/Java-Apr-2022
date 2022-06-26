@@ -1,33 +1,49 @@
 /*-----------------------------------------------------------------------------------------------------------------------	
-	switch deyiminin genel biçimi:
-	switch (<ifade>) {
-		case <sabit ifadesi>:
-			<deyim>
-		case <sabit ifadesi>:
-			<deyim>
-			
-		...
-		
-		[
-		default:
-			<deyim>
-		]
-	}
-	
-	Bu deyimde prantez içerisindeki ifade temel türler için tamsayı türlerinden biri veya char türü olabilir. Temel türler
-	dışında String veya enum türünden biri olabilir. Bu türler ileride ele alınacaktır. switch deyiminin default kısmı
-	zorunlu değildir. 
-	
-	Anahtar Notlar: switch Java 12'den itibaren ifade (expression) olarak da kullanılabilmektedir. Bu tarz deyimlere 
- 	"ifadesel deyim (expression statement)" switch'in ifadesel deyim olarak kullanımına yönelik sentaks semantik eklentiler
- 	yapılmıştır. İleride ele alınacaktır 
+	Sınıf Çalışması: Parametresi ile aldığı int türden gün, ay ve yıl bilgilerine ilişkin tarihin geçerli olup olmadığını
+	test eden isValidDate isimli metodu yazınız ve aşağıdaki kod ile test ediniz
 -----------------------------------------------------------------------------------------------------------------------*/
 package csd;
 
 class App {
 	public static void main(String [] args)
 	{	
-				
+		IsValidDateTest.run();		
+	}
+}
+
+class IsValidDateTest {
+	public static void run()
+	{
+		java.util.Scanner kb = new java.util.Scanner(System.in);
+		
+		for (;;) {
+			System.out.print("Gün ay ve yıl bilgilerini giriniz:");
+			int day = kb.nextInt();
+			int month = kb.nextInt();
+			int year = kb.nextInt();
+			
+			if (day == 0)
+				break;
+			
+			if (DateUtil.isValidDate(day, month, year))
+				System.out.printf("%02d/%02d/%04d tarihi geçerli bir tarihtir%n", day, month, year);
+			else
+				System.out.println("Geçersiz tarih");
+		}
+		
+		System.out.println("Tekrar yapıyor musunuz?");
+	}	
+}
+
+class DateUtil {
+	public static boolean isValidDate(int day, int month, int year)
+	{
+		//TODO:
+	}
+	
+	public static boolean isLeapYear(int year)
+	{
+		return year % 4 == 0 && year % 100 != 0 || year % 400 == 0;
 	}
 }
 
