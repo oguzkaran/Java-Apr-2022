@@ -1,6 +1,8 @@
 /*-----------------------------------------------------------------------------------------------------------------------	
 	Sınıf Çalışması: Parametresi ile aldığı int türden gün, ay ve yıl bilgilerine ilişkin tarihin geçerli olup olmadığını
 	test eden isValidDate isimli metodu yazınız ve aşağıdaki kod ile test ediniz
+	
+	Not: İleride daha iyisi yazılacaktır
 -----------------------------------------------------------------------------------------------------------------------*/
 package csd;
 
@@ -38,7 +40,30 @@ class IsValidDateTest {
 class DateUtil {
 	public static boolean isValidDate(int day, int month, int year)
 	{
-		//TODO:
+		return 1 <= day && day <= 31 && 1 <= month && month <= 12 && day <= getDays(month, year);
+	}
+	
+	public static int getDays(int month, int year)
+	{
+		int days;
+		
+		switch (month) {
+		case 4:
+		case 6:
+		case 9:
+		case 11:
+			days = 30;
+			break;
+		case 2:
+			days = 28;
+			if (isLeapYear(year))
+				++days;
+			break;
+		default:
+			days = 31;
+		}
+		
+		return days;
 	}
 	
 	public static boolean isLeapYear(int year)
