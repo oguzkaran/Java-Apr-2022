@@ -1,30 +1,33 @@
 /*-----------------------------------------------------------------------------------------------------------------------	
-	continue deyimi döngüyü değil döngünün o anki adımını sonlandırır. continue deyiminin de etiketli biçimi vardır. Ancak
-	yapısal programlama ve nesne yönelimli programlama açısından kullanımı tavsiye edilmez. continue deyiminin etitketsiz
-	biçimi break deyimi kadar sık kullanılmasa da bazı durumlarda okunabilirliği/algılanabilirliği artırır. continue
-	deyimi yalnızca döngü deyimlerinde kullanılabilir
+	switch deyiminin genel biçimi:
+	switch (<ifade>) {
+		case <sabit ifadesi>:
+			<deyim>
+		case <sabit ifadesi>:
+			<deyim>
+			
+		...
+		
+		[
+		default:
+			<deyim>
+		]
+	}
 	
-	Aşağıdaki örnekte 1 ile klavyeden girilen sayı arasındaki çift sayılar continue deyimi kullanılarak ekrana 
-	bastırılmıştır. Şüphesiz daha kolay yazılabilir. Sadece constinue deyiminin çalışma prensibinin anlaşılabilmesi için 
-	bu şekilde yazılmıştır
+	Bu deyimde prantez içerisindeki ifade temel türler için tamsayı türlerinden biri veya char türü olabilir. Temel türler
+	dışında String veya enum türünden biri olabilir. Bu türler ileride ele alınacaktır. switch deyiminin default kısmı
+	zorunlu değildir. 
+	
+	Anahtar Notlar: switch Java 12'den itibaren ifade (expression) olarak da kullanılabilmektedir. Bu tarz deyimlere 
+ 	"ifadesel deyim (expression statement)" switch'in ifadesel deyim olarak kullanımına yönelik sentaks semantik eklentiler
+ 	yapılmıştır. İleride ele alınacaktır 
 -----------------------------------------------------------------------------------------------------------------------*/
 package csd;
 
 class App {
 	public static void main(String [] args)
 	{	
-		java.util.Scanner kb = new java.util.Scanner(System.in);
-		System.out.print("Bir sayı giriniz:");
-		int n = kb.nextInt();
-		
-		for (int i = 1; i <= n; ++i) {
-			if (i % 2 != 0)
-				continue;
-			
-			System.out.printf("%d ", i);
-		}
-		
-		System.out.println();
+				
 	}
 }
 
