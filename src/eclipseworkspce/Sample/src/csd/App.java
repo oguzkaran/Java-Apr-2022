@@ -1,19 +1,24 @@
 /*-----------------------------------------------------------------------------------------------------------------------	
-	Sınıf Çalışması: Parametresi ile aldığı int türden gün, ay ve yıl bilgilerine ilişkin tarihin geçerli olup olmadığını
-	test eden isValidDate isimli metodu yazınız ve aşağıdaki kod ile test ediniz
-	
-	Not: İleride daha iyisi yazılacaktır
+	Sınıf Çalışması: Parametresi ile aldığı int türden gün, ay ve yıl bilgilerine ilişkin tarihin yılın kaçıncı günü
+	olduğunu döndüren getDayOfYear metodunu yazınız ve aşağıdaki kod ile test ediniz.
+	Açıklamalar: 
+		- Metot geçersiz bir tarih için -1 değerine geri dönecektir
+		- Yılın kaçıncı günü olduğuna ilişkin algoritma için aşağıdaki örnekleri inceleyiniz
+			01.03.2020 -> 1 + 29 + 31 = 61
+			01.03.2022 -> 1 + 28 + 31 = 60
+			31.12.2020 -> 31 + 30 + 31 + ... + 29 + 31 = 366
+			31.12.2022 -> 31 + 30 + 31 + ... + 28 + 31 = 365
 -----------------------------------------------------------------------------------------------------------------------*/
 package csd;
 
 class App {
 	public static void main(String [] args)
 	{	
-		IsValidDateTest.run();		
+		GetDayOfYearTest.run();		
 	}
 }
 
-class IsValidDateTest {
+class GetDayOfYearTest {
 	public static void run()
 	{
 		java.util.Scanner kb = new java.util.Scanner(System.in);
@@ -27,8 +32,10 @@ class IsValidDateTest {
 			if (day == 0)
 				break;
 			
-			if (DateUtil.isValidDate(day, month, year))
-				System.out.printf("%02d/%02d/%04d tarihi geçerli bir tarihtir%n", day, month, year);
+			int dayOfYear = DateUtil.getDayOfYear(day, month, year);
+			
+			if (dayOfYear != -1)
+				System.out.printf("%02d/%02d/%04d tarihi yılın %d. günüdür%n", day, month, year, dayOfYear);
 			else
 				System.out.println("Geçersiz tarih");
 		}
@@ -38,6 +45,11 @@ class IsValidDateTest {
 }
 
 class DateUtil {
+	public static int getDayOfYear(int day, int month, int year)
+	{
+		//TODO:
+	}
+	
 	public static boolean isValidDate(int day, int month, int year)
 	{
 		return 1 <= day && day <= 31 && 1 <= month && month <= 12 && day <= getDays(month, year);
