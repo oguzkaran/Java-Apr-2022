@@ -1,18 +1,21 @@
 /*-----------------------------------------------------------------------------------------------------------------------	
-	İşlem Öncesi Otomatik Tür Dönüşümü:
-	İki operandlı bir operatör için derleyici önce operandların türüne bakar. Operandlar farklı türdense ve işlem
-	geçerli ise, ortak bir türe dönüştürülerek işlem yapılır. Hatta bazı durumlarda iki tür aynı olsa bile ikisini de
-	farklı türe dönüştürür. Yani derleyici buna yönelik kod üretir. Bu dönüştürmeye "işlem öncesi otomatik tür dönüşümü"
-	denir. 
-	
-	Bu kuralın özeti "Genel olarak külçük türe ilişkin değer büyük türe dönüştürülür. Sonuş büyük türden çıkar biçimindedir.
+	implicit olarak geçerli olan dönüşümler için de tür dönüştürme operatörü kullanılabilir. Aşağıdaki örnekte bunun
+	bir anlamı yoktur	
 -----------------------------------------------------------------------------------------------------------------------*/
 package csd;
 
 class App {
 	public static void main(String [] args)
 	{	
-				
+		java.util.Scanner kb = new java.util.Scanner(System.in);
+		
+		System.out.print("Bir sayı giriniz:");
+		int a = kb.nextInt();		
+		long b;
+		
+		b = (long)a;
+		
+		System.out.printf("b = %d%n", b);
 	}
 }
 
