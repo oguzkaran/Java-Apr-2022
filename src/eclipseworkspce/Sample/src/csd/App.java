@@ -13,7 +13,7 @@ class App {
 		int a = kb.nextInt();		
 		long b;
 		
-		b = (long)a;
+		b = (long)a
 		
 		System.out.printf("b = %d%n", b);
 	}
