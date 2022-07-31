@@ -1,51 +1,48 @@
 /*-----------------------------------------------------------------------------------------------------------------------	
-	1. Aday Metotlar: 1, 2, 3, 4, 5, 6
-	2. Uygun metotlar: 3, 4
-	3. En uygun metot yok: yok
+	Homework-003-8. sorunun bir çözümü
+	(Not: Çözümde koşul operatörü kullanılmıştır)
 -----------------------------------------------------------------------------------------------------------------------*/
 package csd;
 
 class App {
 	public static void main(String [] args)
 	{
-		int a = 10;
-		int b = 3;
-		
-		Sample.foo(a, b); //error: ambiguity	
+		PrintCollatzTest.run();
 	}
 }
 
-class Sample {
-	public static void foo() //1
-	{		
-		System.out.println("Sample.foo()");
-	}
-	
-	public static void foo(int x) //2
+class PrintCollatzTest {
+	public static void run()
 	{
-		System.out.println("Sample.foo(int)");
+		java.util.Scanner kb = new java.util.Scanner(System.in);
+		
+		for (;;) {
+			System.out.print("Bir sayı giriniz:");
+			int a = Integer.parseInt(kb.nextLine());
+			
+			if (a == 0)
+				break;
+			
+			NumberUtil.printCollatz(a);
+		}
+		
+		System.out.println("Tekrar yapıyor musunuz?");
 	}
-	
-	
-	public static void foo(int x, long y) //3
-	{
-		System.out.println("Sample.foo(int, long)");		
-	}
-	
-	public static void foo(double y, int x) //4
-	{
-		System.out.println("Sample.foo(double, int)");		
-	}
-	
-	public static void foo(short y, int x) //5
-	{
-		System.out.println("Sample.foo(short, int)");		
-	}
-	
-	public static void bar(double y, int x) //6
-	{
-		System.out.println("Sample.bar(double, int)");		
-	}
+}
 
+
+class NumberUtil {
+	public static void printCollatz(int n)
+	{
+		if (n <= 0) {
+			System.out.println("Geçersiz sayı");
+			return;
+		}
+		
+		System.out.println(n);
+		
+		while (n != 1) 
+			System.out.println(n = (n % 2 == 0) ? (n / 2) : (3 * n + 1));
+	}
 }
 
