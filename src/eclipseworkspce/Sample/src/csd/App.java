@@ -1,34 +1,25 @@
 /*-----------------------------------------------------------------------------------------------------------------------	
-	Aşağıdaki örnekte değer türü kullanıldığından a'nın değeri artırıldığında b'nin değeri değişmez
+	Sınıfın static bir veri elemanına sınıf dışından referans ve nokta operatörü ile erişilebilir. Sınıf ismi ile
+	erişmekten farkı yoktur. Sınıfın static veri elemanlarına bu şekilde erişim okunabilirlik/algılanabilirlik 
+	açısından edilmemelidir
 -----------------------------------------------------------------------------------------------------------------------*/
 package csd;
 
 class App {
 	public static void main(String [] args)
 	{		
-		Sample s, k;
+		Sample s = new Sample();
 		
-		s = new Sample();
+		s.x = 10; //Gönlümüzün error'u
+		s.y = true; //Gönlümüzün error'u
 		
-		k = s;
-		
-		s.x = 10;
-		
-		System.out.printf("s.x = %d%n", s.x);
-		System.out.printf("k.x = %d%n", k.x);
-		System.out.println("-------------------------------------------");
-		
-		++s.x;
-		
-		System.out.printf("s.x = %d%n", s.x);
-		System.out.printf("k.x = %d%n", k.x);
-		System.out.println("-------------------------------------------");		
-		
+		System.out.printf("Sample.x = %d%n", Sample.x);
+		System.out.printf("Sample.y = %b%n", Sample.y);
 	}
 }
 
 class Sample {
-	public int x;	
+	public static int x;
+	public static boolean y;
 	//...
 }
-
