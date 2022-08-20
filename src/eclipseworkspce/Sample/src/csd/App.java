@@ -1,29 +1,63 @@
 /*-----------------------------------------------------------------------------------------------------------------------	
-	Nesnenin yaratılması adımları:
-	1. Bellekte yer ayırılır
-	2. non-static olan (ancak final olmayan) veri elemanlarına default değerler atanır
-	3. Constructor (ctor) çağrılır
+	Point sınıfı test kodu	
 -----------------------------------------------------------------------------------------------------------------------*/
 package csd;
 
 class App {
 	public static void main(String [] args)
+	{		
+		Point p1 = new Point(34.6, 67.9);		
+		Point p2 = new Point();
+		Point p3 = new Point(34.8);		
+		
+		p1.print();
+		p2.print();
+		p3.print();
+	}
+}
+
+class Point {
+	public double x;
+	public double y;
+	
+	public Point()	
+	{		
+	}
+	
+	public Point(double a)
 	{
-		java.util.Random random = new java.util.Random();
-		java.util.Scanner kb = new java.util.Scanner(System.in);
-		System.out.print("Bir sayı giriniz:");
-		long seed = Long.parseLong(kb.nextLine());		
-		
-		for (int i = 0; i < 10; ++i)
-			System.out.printf("%02d ", random.nextInt(100));
-		
-		System.out.println();
-		
-		random.setSeed(seed);
-		
-		for (int i = 0; i < 10; ++i)
-			System.out.printf("%02d ", random.nextInt(100));
-		
-		System.out.println();		
+		x = a;
+	}
+	
+	public Point(double a, double b)
+	{
+		x = a;
+		y = b;
+	}
+	
+	public double distance(double a, double b)
+	{
+		return Math.sqrt(Math.pow(x - a, 2) + Math.pow(y - b, 2));				
+	}
+	
+	public double distance(Point other)
+	{
+		return distance(other.x, other.y);
+	}	
+	
+	public void offset(double dxy)
+	{
+		offset(dxy, dxy);
+	}
+	
+	public void offset(double dx, double dy)
+	{
+		x += dx;
+		y += dy;
+	}
+	
+	public void print()
+	{
+		System.out.printf("(%f, %f)%n", x, y);
 	}
 }
