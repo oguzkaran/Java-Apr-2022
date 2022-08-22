@@ -1,5 +1,6 @@
 /*-----------------------------------------------------------------------------------------------------------------------	
-	Sınıf Çalışması: Yukarıdaki uygulamanın kullanıcı adını bir yerden okuyan 
+	Sınıf Çalışması: Yukarıdaki uygulamanın kullanıcı adını bir yerden okuyan ve yalnızca şifre isteyen versiyonunu
+	yazınız
 -----------------------------------------------------------------------------------------------------------------------*/
 package csd;
 
