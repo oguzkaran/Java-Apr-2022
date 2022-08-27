@@ -1,19 +1,41 @@
-/*-----------------------------------------------------------------------------------------------------------------------	
-	Sınıf Çalışması: Klavyeden elma girilene kadar alınan yazıların arasında - karakteri olacak şekilde birleştirilmiş
-	bir String oluşturan programı yazınız.
-	Örneğin ankara istanbul izmir girilirse -> ankara-istanbul-izmir
-	Örneğin ankara girilirse -> ankara
-	Açıklamalar:
-	- Tamamı whitespace karakterlerinden oluşan String ve boş string eklenmeyecektir 
-	- Programda dizi kullanılmayacaktır
+/*----------------------------------------------------------------------------------------------------------------------
+    Sınıf Çalışması: Parametresi ile aldığı bir yazının ilk harfi büyük geri kalan harfleri küçük olacak şekilde
+    ve harf dışı karakterler de aynı kalacak şekilde bir yazı döndüren capitalize isimli metodu StringUtil sınıfı 
+    içerisinde yazınız ve aşağıdaki kod ile test ediniz    
 -----------------------------------------------------------------------------------------------------------------------*/
+
 package csd;
 
 class App {
 	public static void  main(String [] args)
 	{
-		System.out.println("Java" + 10 + 20);
-		System.out.println("Java" + (10 + 20));
+		CapitalizeTest.run();
+	}
+}
+
+class CapitalizeTest {
+	public static void run()
+	{
+		java.util.Scanner kb = new java.util.Scanner(System.in);
+		
+		for (;;) {
+			System.out.print("Bir yazı giriniz:");
+			String s = kb.nextLine();
+			
+			System.out.printf("(%s)%n", StringUtil.capitalize(s));
+			
+			if ("elma".equals(s))
+				break;
+		}
+		
+		System.out.println("Tekrar yapıyor musunuz?");
+	}
+}
+
+class StringUtil {
+	public static String capitalize(String str)
+	{
+		//TODO:
 	}
 }
 
