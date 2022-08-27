@@ -1,26 +1,38 @@
 /*-----------------------------------------------------------------------------------------------------------------------	
-	Sınıf Çalışması: Yukarıdaki uygulamanın kullanıcı adını bir yerden okuyan ve yalnızca şifre isteyen versiyonunu
-	yazınız
+	Sınıf Çalışması: Parametresi ile aldığı bir yazının tersini döndüren reverse isimli metodu StringUtil sınıfı 
+	içerisinde yazınız ve aşağıdaki kod yazınız  
 -----------------------------------------------------------------------------------------------------------------------*/
 package csd;
 
 class App {
 	public static void  main(String [] args)
 	{
+		ReverseTest.run();
+	}
+}
+
+class ReverseTest {
+	public static void run()
+	{
 		java.util.Scanner kb = new java.util.Scanner(System.in);
 		
 		for (;;) {
 			System.out.print("Bir yazı giriniz:");
-			String s = kb.nextLine();
+			String str = kb.nextLine();
 			
-			if ("elma".equals(s))
+			if ("elma".equals(str))
 				break;
 			
-			System.out.printf("[%s]%n", s);
-			System.out.printf("[%s]%n", s.trim());
+			System.out.printf("Yazının tersi:%s%n", StringUtil.reverse(str));
 		}
 		
 		System.out.println("Tekrar yapıyor musunuz?");
 	}
 }
 
+class StringUtil {
+	public static String reverse(String str)
+	{
+		//TODO:
+	}
+}
