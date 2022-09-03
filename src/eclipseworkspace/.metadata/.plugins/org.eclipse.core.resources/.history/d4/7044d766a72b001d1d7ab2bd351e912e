@@ -1,0 +1,63 @@
+/*-----------------------------------------------------------------------------------------------------------------------	
+	Point sınıfının toString metodu
+-----------------------------------------------------------------------------------------------------------------------*/
+package csd;
+
+class App {
+	public static void main(String [] args)
+	{		
+		Point p1 = new Point(34.6, 67.9);		
+		Point p2 = new Point();
+		Point p3 = new Point(34.8);		
+		
+		System.out.println(p1.toString());
+		System.out.println(p2.toString());
+		System.out.println(p3.toString());
+	}
+}
+
+class Point {
+	public double x;
+	public double y;
+	
+	public Point()	
+	{		
+	}
+	
+	public Point(double a)
+	{
+		x = a;
+	}
+	
+	public Point(double a, double b)
+	{
+		x = a;
+		y = b;
+	}
+	
+	public double distance(double a, double b)
+	{
+		return Math.sqrt(Math.pow(x - a, 2) + Math.pow(y - b, 2));				
+	}
+	
+	public double distance(Point other)
+	{
+		return distance(other.x, other.y);
+	}	
+	
+	public void offset(double dxy)
+	{
+		offset(dxy, dxy);
+	}
+	
+	public void offset(double dx, double dy)
+	{
+		x += dx;
+		y += dy;
+	}
+	
+	public String toString()
+	{
+		return String.format("(%f, %f)", x, y);
+	}
+}

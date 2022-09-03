@@ -1,0 +1,13 @@
+/*-----------------------------------------------------------------------------------------------------------------------	
+	String sınıfının valueOf metotları ile temel türlerin değerlerinin yazı karşılığı elde edilebilir	
+-----------------------------------------------------------------------------------------------------------------------*/
+package csd;
+
+class App {
+	public static void  main(String [] args)
+	{
+		String str = "Bugün hava çok güzel. Bu çok güzel havada denize girebilirsiniz";
+		str = str.replace("güzel", "kötü")
+	}
+}
+

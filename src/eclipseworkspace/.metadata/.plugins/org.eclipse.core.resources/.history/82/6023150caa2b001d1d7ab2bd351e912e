@@ -1,0 +1,69 @@
+/*-----------------------------------------------------------------------------------------------------------------------	
+	Aşağıdaki örnekte repeat metodunu Java 11 ile eklenen repeat metodunu kullanmadan ve döngü de kullanmadan yazınız
+-----------------------------------------------------------------------------------------------------------------------*/
+package csd;
+
+class App {
+	public static void main(String [] args)
+	{	
+		PadLeadingTrailingTest.run();
+	}
+}
+
+class PadLeadingTrailingTest {
+	public static void run()
+	{		
+		java.util.Scanner kb = new java.util.Scanner(System.in);
+		
+		for (;;) {
+			System.out.print("Bir yazı giriniz:");
+			String s = kb.nextLine();
+			
+			if ("elma".equals(s))
+				break;
+			
+			System.out.println("Bir sayı giriniz:");
+			int len = Integer.parseInt(kb.nextLine());
+			
+			System.out.printf("(%s)%n", StringUtil.padLeading(s, len, 'x'));
+			System.out.printf("(%s)%n", StringUtil.padLeading(s, len));
+			System.out.printf("(%s)%n", StringUtil.padTrailing(s, len, 'x'));
+			System.out.printf("(%s)%n", StringUtil.padTrailing(s, len));
+		}
+		
+		System.out.println("Tekrar yapıyor musunuz?");
+	}	
+}
+
+class StringUtil {
+	public static String padLeading(String s, int len, char ch)
+	{
+		int length = s.length();
+		
+		return len <= length ? s : repeat(len - length, ch) + s;
+	}
+	
+	public static String padLeading(String s, int len)
+	{
+		return padLeading(s, len, ' ');
+	}
+	
+	public static String padTrailing(String s, int len, char ch)
+	{
+		int length = s.length();
+		
+		return len <= length ? s : s + repeat(len - length, ch);
+	}
+	
+	public static String padTrailing(String s, int len)
+	{
+		return padTrailing(s, len, ' ');
+	}
+	
+	public static String repeat(int count, char ch)
+	{
+		//TODO:
+	}
+	
+	
+}

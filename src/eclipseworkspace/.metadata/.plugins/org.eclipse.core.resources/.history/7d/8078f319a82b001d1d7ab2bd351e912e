@@ -1,0 +1,15 @@
+/*-----------------------------------------------------------------------------------------------------------------------	
+	String sınıfının valueOf metotları ile temel türlerin değerlerinin yazı karşılığı elde edilebilir	
+-----------------------------------------------------------------------------------------------------------------------*/
+package csd;
+
+class App {
+	public static void  main(String [] args)
+	{
+		int a = 10;
+		String s = String.valueOf(a);
+		
+		System.out.println(s + s);
+	}
+}
+

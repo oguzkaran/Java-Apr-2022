@@ -1,0 +1,32 @@
+/*-----------------------------------------------------------------------------------------------------------------------	
+		
+-----------------------------------------------------------------------------------------------------------------------*/
+package csd;
+
+class App {
+	public static void  main(String [] args)
+	{
+		java.util.Scanner kb = new java.util.Scanner(System.in);
+		System.out.print("Şehir ismini giriniz:");
+		String name = kb.nextLine();
+		
+		switch (name.toLowerCase()) {
+		case "istanbul":
+		case "bakıkesir":
+		case "bursa":
+		case "tekirdağ":
+			System.out.printf("%s Marmara Bölgesindedir%n", name);
+			break;
+		case "zonguldak":
+		case "sinop":
+		case "bolu":
+			System.out.printf("%s Batı Karadeniz Bölgesindedir%n", name);
+			break;
+		default:
+			System.out.println("Geçersiz şehir ismi");
+		}
+		
+		System.out.println("Tekrar yapıyor musunuz?");
+	}
+}
+

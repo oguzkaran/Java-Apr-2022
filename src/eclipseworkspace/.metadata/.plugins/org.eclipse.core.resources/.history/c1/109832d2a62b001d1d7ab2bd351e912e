@@ -1,0 +1,27 @@
+/*-----------------------------------------------------------------------------------------------------------------------	
+	String sınıfının static format metodu ,le formatlanmış bir yazı elde edilebilir. Bu metodun kullanımı printf ile
+	aynıdır. Yalnızca printf gibiekrana basmak yerine 
+-----------------------------------------------------------------------------------------------------------------------*/
+package csd;
+
+
+class App {
+	public static void main(String [] args)
+	{	
+		java.util.Scanner kb = new java.util.Scanner(System.in);
+		System.out.print("Bir sayı giriniz:");
+		String str = kb.nextLine();
+		
+		System.out.print("Sayı sistemini giriniz:");
+		int radix = Integer.parseInt(kb.nextLine());
+		
+		int a  = Integer.parseInt(str, radix);
+		
+		String message = String.format("a = %d", a);
+		
+		//...
+		
+		System.out.println(message);		
+	}
+}
+

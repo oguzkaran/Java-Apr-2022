@@ -1,0 +1,11 @@
+/*-----------------------------------------------------------------------------------------------------------------------	
+	Aşağıdaki örnekte repeat metodunu Java 11 ile eklenen repeat metodunu kullanmadan ve döngü de kullanmadan yazınız
+-----------------------------------------------------------------------------------------------------------------------*/
+package csd;
+
+class App {
+	public static void main(String [] args)
+	{	
+		PadLeadingTrailingTest.run();		
+	}
+}

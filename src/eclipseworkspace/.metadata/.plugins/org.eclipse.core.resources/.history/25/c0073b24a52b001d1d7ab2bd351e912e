@@ -1,0 +1,20 @@
+/*-----------------------------------------------------------------------------------------------------------------------	
+	Character sınıfı hariç sarmalayan sınıfların parseXXX static metotları vardır. Bu metotlar parametresi ile aldıkları
+	yazıyı ilgili türden değere çevirmek için kullanılır. Boolean sınıfının parseBoolean metodu hariç tüm parseXXX metotları
+	çeviremedikleri durumda exception oluşuır
+-----------------------------------------------------------------------------------------------------------------------*/
+package csd;
+
+
+class App {
+	public static void main(String [] args)
+	{	
+		java.util.Scanner kb = new java.util.Scanner(System.in);
+		System.out.print("Flag değerini giriniz:");
+		String str = kb.nextLine();
+		int a = Integer.parseInt(str);
+		
+		System.out.printf("%d * %d = %d%n", a, a, a * a);
+	}
+}
+

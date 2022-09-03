@@ -1,0 +1,14 @@
+/*-----------------------------------------------------------------------------------------------------------------------	
+		
+-----------------------------------------------------------------------------------------------------------------------*/
+package csd;
+
+class App {
+	public static void  main(String [] args)
+	{
+		java.util.Scanner kb = new java.util.Scanner(System.in);
+		System.out.print("Şehir ismini giriniz:");
+		String name = kb.nextLine();
+	}
+}
+
