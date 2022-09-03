@@ -1,0 +1,52 @@
+/*-----------------------------------------------------------------------------------------------------------------------	
+	Sınıf Çalışması: Parametresi ile bir yazının palindrom olup olmadığını test eden isPalindrome metodunu yazınız ve
+	aşağıdaki kod ile test ediniz.
+	Palindrom: Yalnızca alfabedeki olan karakterleri tersten okunduğunda aynı olan yazılara denir. Detayların gözardı
+	edilmesi koşuluyla bu tanım yapılabilir.
+	
+	Örnek:
+	Ey Edip Adana'da pide ye 	-> eyedipadanadapideye
+	Anastas mum satsana			-> anastasmumsatsana
+	Ali Papila					-> alipapila
+	
+	Not: İleride daha iyisi yazılacaktır
+-----------------------------------------------------------------------------------------------------------------------*/
+package csd;
+
+import java.util.Random;
+
+class App {
+	public static void main(String [] args)
+	{	
+		IsPalindromeTest.run();
+	}
+}
+
+class IsPalindromeTest {
+	public static void run()
+	{
+		java.util.Scanner kb = new java.util.Scanner(System.in);
+		java.util.Random r = new java.util.Random();
+		
+		for (;;) {			
+			System.out.print("Bir yazı giriniz:");
+			String s = kb.nextLine();
+			
+			if ("elma".equals(s))
+				break;
+			
+			System.out.println(StringUtil.isPalindrome(s) ? "Palindrome" : "Palindrom değil");
+		}
+		
+		System.out.println("Tekrar yapıyor musunuz?");
+	}
+}
+
+
+class StringUtil {
+	public static boolean isPalindrome(String s)
+	{
+		int left = 0;		
+	}
+}
+

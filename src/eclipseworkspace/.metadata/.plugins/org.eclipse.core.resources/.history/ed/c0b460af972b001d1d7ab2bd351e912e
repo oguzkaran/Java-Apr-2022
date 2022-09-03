@@ -1,0 +1,53 @@
+/*-----------------------------------------------------------------------------------------------------------------------	
+	Sınıf Çalışması: Parametresi ile aldığı int türden bir count değeri için count tane rasgele üretilmiş, Türkçe alfabedeki
+	karakterlerden oluşan bir yazı döndüren getRandomTextTR ve count tane rasgele üretilmiş, İngilizce alfabedeki
+	karakterlerden oluşan bir yazı döndüren getRandomTextEN metotlarını StringUtil içerisinde yazınız ve aşağıdaki kod
+	ile test ediniz
+-----------------------------------------------------------------------------------------------------------------------*/
+package csd;
+
+import java.util.Random;
+
+class App {
+	public static void main(String [] args)
+	{	
+		GetRandomTextENTest.run();		
+	}
+}
+
+class GetRandomTextENTest {
+	public static void run()
+	{
+		java.util.Scanner kb = new java.util.Scanner(System.in);
+		java.util.Random r = new java.util.Random();
+		
+		for (;;) {			
+			System.out.print("Bir sayı giriniz:");
+			int count = Integer.parseInt(kb.nextLine());
+			
+			if (count <= 0)
+				break;
+			
+			System.out.printf("Şifre:%s%n", StringUtil.getRandomTextEN(r, count));			
+		}
+		
+		System.out.println("Tekrar yapıyor musunuz?");
+	}
+}
+
+
+class StringUtil {	
+	public static String getRandomTextEN(java.util.Random random, int count)
+	{
+		String str = "";
+		
+		for (int i = 0; i < count; ++i)
+			str += random.nextInt(26) + (random.nextBoolean() ? 'A' : 'a')
+	}
+	
+	public static String getRandomTextEN(int count)
+	{
+		return getRandomTextEN(new Random(), count);
+	}	
+	
+}

@@ -1,0 +1,32 @@
+/*-----------------------------------------------------------------------------------------------------------------------	
+	String sınıfının contains metodu 
+-----------------------------------------------------------------------------------------------------------------------*/
+package csd;
+
+class App {
+	public static void main(String [] args)
+	{	
+		java.util.Scanner kb = new java.util.Scanner(System.in);
+		
+		for (;;) {			
+			System.out.print("Birinci yazıyı giriniz:");
+			String s1 = kb.nextLine();
+			
+			if ("elma".equals(s1))
+				break;
+			
+			System.out.print("İkinci yazıyı giriniz:");
+			String s2 = kb.nextLine();		
+			
+			
+			if (s1.toLowerCase().contains(s2.toLowerCase()))
+				System.out.println("Yazı bulundu");
+			else
+				System.out.println("Yazı bulunamadı");
+			
+		}
+		
+		System.out.println("Tekrar yapıyor musunuz?");		
+	}
+}
+

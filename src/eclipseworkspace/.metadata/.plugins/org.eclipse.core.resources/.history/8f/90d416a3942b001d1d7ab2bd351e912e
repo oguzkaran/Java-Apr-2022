@@ -1,0 +1,64 @@
+/*-----------------------------------------------------------------------------------------------------------------------	
+	Sınıf Çalışması: Parametresi ile aldığı int türden bir count değeri için count tane rasgele üretilmiş, Türkçe alfabedeki
+	karakterlerden oluşan bir yazı döndüren getRandomTextTR ve count tane rasgele üretilmiş, İngilizce alfabedeki
+	karakterlerden oluşan bir yazı döndüren getRandomTextEN metotlarını StringUtil içerisinde yazınız ve aşağıdaki kod
+	ile test ediniz
+-----------------------------------------------------------------------------------------------------------------------*/
+package csd;
+
+import java.util.Random;
+
+class App {
+	public static void main(String [] args)
+	{	
+		GetRandomTextTRENTest.run();		
+	}
+}
+
+class GetRandomTextTRENTest {
+	public static void run()
+	{
+		java.util.Scanner kb = new java.util.Scanner(System.in);
+		java.util.Random r = new java.util.Random();
+		
+		for (;;) {			
+			System.out.print("Bir sayı giriniz:");
+			int count = Integer.parseInt(kb.nextLine());
+			
+			if (count <= 0)
+				break;
+			
+			System.out.printf("Şifre:%s%n", StringUtil.getRandomTextTR(r, count));
+			System.out.printf("Password:%s%n", StringUtil.getRandomTextTR(r, count));
+		}
+	}
+}
+
+
+class StringUtil {
+	public static String getRandomTextTR(java.util.Random random, int count)
+	{
+		return getRandomText(random, count, "abcçdefgğhıijklmnoöprsştuüvyzABCÇDEFGĞHIİJKLMNOÖPRSŞTUÜVYZ");
+	}
+	
+	public static String getRandomTextTR(int count)
+	{
+		return getRandomTextTR(new Random(), count);
+	}
+	
+	public static String getRandomTextEN(java.util.Random random, int count)
+	{
+		//TODO:
+	}
+	
+	public static String getRandomTextEN(int count)
+	{
+		return getRandomTextEN(new Random(), count);
+	}
+	
+	
+	public static String getRandomText(java.util.Random random, int count, String sourceText)
+	{
+		
+	}
+}

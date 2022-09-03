@@ -1,3 +1,4 @@
-INDEX VERSION 1.131+C:\Users\Karans\Desktop\Java-Aug-2022-study\eclipseworkspace\.metadata\.plugins\org.eclipse.jdt.core
-1865797976.index
+INDEX VERSION 1.131+C:\Users\Karans\Dropbox\CSD\Kurslar\Java-Apr-2022\src\eclipseworkspace\.metadata\.plugins\org.eclipse.jdt.core
 1048350443.index
+75931715.index
+1865797976.index

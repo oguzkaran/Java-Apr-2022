@@ -1,0 +1,69 @@
+/*-----------------------------------------------------------------------------------------------------------------------	
+	Sınıf Çalışması: Parametresi ile bir yazının palindrom olup olmadığını test eden isPalindrome metodunu yazınız ve
+	aşağıdaki kod ile test ediniz.
+-----------------------------------------------------------------------------------------------------------------------*/
+package csd;
+
+import java.util.Random;
+
+class App {
+	public static void main(String [] args)
+	{	
+		GetRandomTextTRENTest.run();		
+	}
+}
+
+class GetRandomTextTRENTest {
+	public static void run()
+	{
+		java.util.Scanner kb = new java.util.Scanner(System.in);
+		java.util.Random r = new java.util.Random();
+		
+		for (;;) {			
+			System.out.print("Bir sayı giriniz:");
+			int count = Integer.parseInt(kb.nextLine());
+			
+			if (count <= 0)
+				break;
+			
+			System.out.printf("Şifre:%s%n", StringUtil.getRandomTextTR(r, count));
+			System.out.printf("Password:%s%n", StringUtil.getRandomTextEN(r, count));
+		}
+		
+		System.out.println("Tekrar yapıyor musunuz?");
+	}
+}
+
+
+class StringUtil {
+	public static String getRandomTextTR(java.util.Random random, int count)
+	{
+		return getRandomText(random, count, "abcçdefgğhıijklmnoöprsştuüvyzABCÇDEFGĞHIİJKLMNOÖPRSŞTUÜVYZ");
+	}
+	
+	public static String getRandomTextTR(int count)
+	{
+		return getRandomTextTR(new Random(), count);
+	}
+	
+	public static String getRandomTextEN(java.util.Random random, int count)
+	{
+		return getRandomText(random, count, "abcdefghijklmnopqrstuwxvyzABCDEFGHIJKLMNOPQRSTUWXVYZ");
+	}
+	
+	public static String getRandomTextEN(int count)
+	{
+		return getRandomTextEN(new Random(), count);
+	}	
+	
+	public static String getRandomText(java.util.Random random, int count, String sourceText)
+	{
+		String str = "";
+		int len = sourceText.length();
+		
+		for (int i = 0; i < count; ++i)
+			str += sourceText.charAt(random.nextInt(len));
+		
+		return str;		
+	}
+}
