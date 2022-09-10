@@ -1,0 +1,24 @@
+/*-----------------------------------------------------------------------------------------------------------------------	
+	Niteliksiz isim arama genel kuralları (else if biçiminde değerlendiriniz)
+	2. 
+-----------------------------------------------------------------------------------------------------------------------*/
+package org.csystem.app;
+
+class App {
+	public static void main(String [] args)
+	{	
+		int a;
+		
+		a = 10;
+	}
+}
+
+class Sample {
+	public void foo(int x)
+	{
+		int a;
+		
+		a = x;
+	}
+}
+

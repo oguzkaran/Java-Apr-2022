@@ -1,0 +1,15 @@
+/*-----------------------------------------------------------------------------------------------------------------------	
+	Niteliksiz isim arama genel kuralları (else if biçiminde değerlendiriniz)
+	1. Bir isim metot içerisinde kullanılmışsa, 
+-----------------------------------------------------------------------------------------------------------------------*/
+package org.csystem.app;
+
+class App {
+	public static void main(String [] args)
+	{	
+		int a;
+		
+		a = 6.7; //error
+	}
+}
+

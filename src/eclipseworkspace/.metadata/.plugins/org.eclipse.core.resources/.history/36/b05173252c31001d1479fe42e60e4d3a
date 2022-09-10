@@ -1,0 +1,35 @@
+/*-----------------------------------------------------------------------------------------------------------------------	
+	Yukarıdaki iki kurala göre bir sınıfın veri elemanı ile aynı isimde 
+-----------------------------------------------------------------------------------------------------------------------*/
+package org.csystem.app;
+
+class App {
+	public static void main(String [] args)
+	{	
+		Sample s = new Sample();
+		
+		s.foo(78);
+		
+		System.out.printf("s.a = %d%n", s.a);
+		s.bar(79);
+	}
+}
+
+class Sample {
+	public void foo(int x)
+	{	
+		
+		a = x;
+	}
+	
+	
+	public int a;
+	//...	
+	
+	public void bar(int a)
+	{
+		System.out.printf("a = %d%n", a);
+	}
+	
+}
+

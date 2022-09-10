@@ -1,0 +1,9 @@
+package msd;
+
+public class Mample {
+	public static void run()
+	{
+		Sample.foo();		
+	}
+	
+}

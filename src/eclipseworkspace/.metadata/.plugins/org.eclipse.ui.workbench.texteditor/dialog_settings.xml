@@ -6,16 +6,23 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="hizalama"/>
+		<item key="selection" value="keyword"/>
 		<list key="findhistory">
-			<item value="hizalama"/>
-			<item value="padLe"/>
+			<item value="keyword"/>
+			<item value="declaration"/>
+			<item value="declaratiıon"/>
+			<item value="StringUtil"/>
+			<item value="NumberUtil"/>
 			<item value="Complex"/>
 			<item value="Point"/>
+			<item value="getLastLo"/>
+			<item value="getFirstLo"/>
+			<item value="getFirst"/>
+			<item value="getLongest"/>
+			<item value="hizalama"/>
+			<item value="padLe"/>
 			<item value="padTr"/>
 			<item value="pad"/>
-			<item value="import"/>
-			<item value="import,"/>
 		</list>
 		<list key="replacehistory">
 		</list>

@@ -1,0 +1,14 @@
+package org.csystem.app;
+
+class Sample {
+	public void foo(int x)
+	{	
+		
+		a = x;
+	}
+	
+	
+	public int a;
+	//...	
+	
+}
