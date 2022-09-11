@@ -1,8 +1,0 @@
-package org.csystem.app;
-
-public class Sample {	
-	public void foo()
-	{
-		System.out.println("mest.Sample.foo");
-	}
-}

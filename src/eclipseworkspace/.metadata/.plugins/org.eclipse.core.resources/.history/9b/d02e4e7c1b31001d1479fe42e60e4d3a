@@ -1,8 +1,0 @@
-package msd;
-
-public class Mest {
-	public static void foo()
-	{
-		System.out.println("Mest.foo");
-	}
-}
