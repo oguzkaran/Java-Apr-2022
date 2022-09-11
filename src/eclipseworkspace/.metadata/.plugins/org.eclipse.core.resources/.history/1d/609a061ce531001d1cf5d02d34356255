@@ -1,0 +1,20 @@
+/*-----------------------------------------------------------------------------------------------------------------------	
+	Aşağıdaki örnekte 
+		import java.util.Scanner;
+	bildirimi "bu derleme biriminda Scanner ismi doğrudan kullanılabilir ve bu isim java.util.Scanner sınıfının ismidir"
+	anlamına gelir
+-----------------------------------------------------------------------------------------------------------------------*/
+package org.csystem.app;
+
+import test.*;
+
+class App {
+	public static void main(String [] args)
+	{	
+		Mample m;
+		
+	}
+}
+
+
+

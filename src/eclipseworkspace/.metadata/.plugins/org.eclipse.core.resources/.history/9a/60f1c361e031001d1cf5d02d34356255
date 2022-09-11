@@ -1,0 +1,19 @@
+/*-----------------------------------------------------------------------------------------------------------------------	
+	import bildirimleri genel olarak niteliklendirmeyi azaltmak için, dolayısıyla daha yalın ve temiz (clean) kodlar
+	yazmakta kullanılır. 
+	
+	Anahtar Notlar: import bildirimleri bir kütüpaneyi "import etmek" anlamına GELMEZ.
+	
+	
+-----------------------------------------------------------------------------------------------------------------------*/
+package org.csystem.app;
+
+
+class App {
+	public static void main(String [] args)
+	{	
+		
+	}
+}
+
+

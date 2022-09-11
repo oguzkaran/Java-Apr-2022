@@ -1,0 +1,19 @@
+/*-----------------------------------------------------------------------------------------------------------------------	
+	Yıldızlı import bildirimlerine ilişkin paketlerin hepsine bakılır. Birden fazla paket içerisinde isim bulunursa error
+	oluşur (ambiguity)
+-----------------------------------------------------------------------------------------------------------------------*/
+package org.csystem.app;
+
+import java.util.*;
+import org.csystem.util.math.geometry.*;
+
+class App {
+	public static void main(String [] args)
+	{	
+		Random r = new Random();
+		Scanner kb = new Scanner(System.in);
+	}
+}
+
+
+

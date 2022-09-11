@@ -1,0 +1,20 @@
+/*-----------------------------------------------------------------------------------------------------------------------	
+	Aşağıdaki Sample ismi niteliksiz isim arama genel kurallarına göre org.csystem.app paketinde bulunur
+-----------------------------------------------------------------------------------------------------------------------*/
+package org.csystem.app;
+
+import test.Mample;
+import test.Sample;
+
+class App {
+	public static void main(String [] args)
+	{	
+		Mample m;
+		Sample s = new Sample();
+		
+		s.foo();
+	}
+}
+
+
+

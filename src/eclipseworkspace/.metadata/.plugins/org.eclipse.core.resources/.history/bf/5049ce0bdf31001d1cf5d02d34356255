@@ -1,0 +1,17 @@
+/*-----------------------------------------------------------------------------------------------------------------------	
+	Alt paket isimleri niteliksiz olarak aranmaz. Yani aşağıdaki örnekte test ismi aranırken 
+-----------------------------------------------------------------------------------------------------------------------*/
+package org.csystem.app;
+
+class App {
+	public static void main(String [] args)
+	{	
+		test.Sample s = new test.Sample();
+		
+		s.a = 20;
+		s.foo();		
+		System.out.println(s.a);
+	}
+}
+
+

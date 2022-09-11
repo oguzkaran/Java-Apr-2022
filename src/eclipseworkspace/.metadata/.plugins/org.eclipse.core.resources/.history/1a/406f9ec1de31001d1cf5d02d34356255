@@ -1,0 +1,10 @@
+package test.copy;
+
+public class Sample {
+	public int a;
+	
+	public void foo()
+	{
+		System.out.println("foo");
+	}
+}

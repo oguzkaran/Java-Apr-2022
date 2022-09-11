@@ -1,0 +1,25 @@
+/*-----------------------------------------------------------------------------------------------------------------------	
+	Nitelikli isim arama genel kuralları (else if biçiminde değerlendiriniz):
+	2. Aranacak ismin solunda referans ismi varsa isim ilgili sınıfı içerisinde aranır. Bulunamazsa taban sınıflara da
+	bakılır 
+-----------------------------------------------------------------------------------------------------------------------*/
+package org.csystem.app;
+
+class App {
+	public static void main(String [] args)
+	{	
+		Sample.a = 20;
+		Sample.foo();		
+		System.out.println(Sample.a);
+	}
+}
+
+class Sample {
+	public static int a;
+	
+	public static void foo()
+	{
+		System.out.println("foo");
+	}
+}
+

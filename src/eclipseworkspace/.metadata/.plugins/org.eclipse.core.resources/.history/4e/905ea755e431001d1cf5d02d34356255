@@ -1,0 +1,34 @@
+/*-----------------------------------------------------------------------------------------------------------------------	
+	Yıldızsız import bildiriminin (import single type declaration) genel biçimi:
+		import <paket ismi>[.alt paketler].<sınıf ismi>;
+	Burada sınıf bir "user defined type" ismidir.
+	
+	Bu bildirim sınıf isminin doğrudan kullanılabileceğini belirtir. Bu bildirimin yapılabildiği durumda bu sınıf
+	ismi için "niteliksiz isim arama genel kuralları" uygulanmaz. Programcı mümkün olduğunca bu import bildirimini
+	kullanmalıdır. Zaten birçok IDE program da mümkün olduğunca bu bildirime yönlendirir
+-----------------------------------------------------------------------------------------------------------------------*/
+package org.csystem.app;
+
+import java.util.Random;
+import java.util.Scanner;
+import org.csystem.util.math.geometry.Point;
+
+class App {
+	public static void main(String [] args)
+	{	
+		Random r = new Random();
+		Scanner kb = new Scanner(System.in);
+		
+		System.out.print("Bir sayı giriniz:");
+		int count = Integer.parseInt(kb.nextLine());
+		
+		while (count-- > 0) {
+			Point p = new Point(r.nextDouble(-100, 100), r.nextDouble(-100, 100));
+			
+			System.out.println(p.toString());
+		}
+	}
+}
+
+
+

@@ -1,0 +1,10 @@
+package mest;
+
+public class Sample {
+	public int a;
+	
+	public void foo()
+	{
+		System.out.println("mest.Sample.foo");
+	}
+}

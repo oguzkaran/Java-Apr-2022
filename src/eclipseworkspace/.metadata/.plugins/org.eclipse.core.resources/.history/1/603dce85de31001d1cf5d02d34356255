@@ -1,0 +1,18 @@
+/*-----------------------------------------------------------------------------------------------------------------------	
+	Nitelikli isim arama genel kuralları (else if biçiminde değerlendiriniz):
+	3.Aranacak ismin solunda paket ismi varsa 
+-----------------------------------------------------------------------------------------------------------------------*/
+package org.csystem.app;
+
+class App {
+	public static void main(String [] args)
+	{	
+		test.Sample s = new test.Sample();
+		
+		s.a = 20;
+		s.foo();		
+		System.out.println(s.a);
+	}
+}
+
+

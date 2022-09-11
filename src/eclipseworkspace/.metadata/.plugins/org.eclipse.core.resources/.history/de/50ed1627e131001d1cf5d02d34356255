@@ -1,0 +1,32 @@
+/*-----------------------------------------------------------------------------------------------------------------------	
+	import bildirimleri genel olarak niteliklendirmeyi azaltmak için, dolayısıyla daha yalın ve temiz (clean) kodlar
+	yazmakta kullanılır. 
+	
+	Anahtar Notlar: import bildirimleri bir kütüpaneyi "import etmek" anlamına GELMEZ.
+	
+	import bildirimleri iki şekilde kullanılabilir:
+	1. Yıldızlı import bildirimi (import on demand declaration)
+	2. Yıldızsız import bildirimi (import single type declaration)
+	
+	import bildirimleri ".java" dosyasında (compilation unit) paket bildiriminden sonra, diğer bildirimlerden 
+	önce yazılmalıdır. Aksi durumda error oluşur. import bildirimleri birden fazla olabilir ve yazılış sırasının
+	önemi yoktur.
+	
+	Anahtar Notlar: "Yıldızlı ve yıldızsız import bildirimi" tercümeleri kolay anlatmak için Oğuz Karan tarafından
+	uydurulmuştur. Teknik olarak "import with asterisk" ve "import without asterisk" DENİLMEMELİDİR.  
+-----------------------------------------------------------------------------------------------------------------------*/
+package org.csystem.app;
+
+
+import java.util.*;
+import org.csystem.util.math.geometry.Point;
+
+class App {
+	public static void main(String [] args)
+	{	
+		
+	}
+}
+
+
+

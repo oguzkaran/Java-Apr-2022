@@ -1,0 +1,20 @@
+/*-----------------------------------------------------------------------------------------------------------------------	
+	import bildirimleri genel olarak niteliklendirmeyi azaltmak için, dolayısıyla daha yalın ve temiz (clean) kodlar
+	yazmakta kullanılır. 
+	
+	Anahtar Notlar: 
+-----------------------------------------------------------------------------------------------------------------------*/
+package org.csystem.app;
+
+class App {
+	public static void main(String [] args)
+	{	
+		test.Sample s = new test.Sample();
+		
+		s.a = 20;
+		s.foo();		
+		System.out.println(s.a);
+	}
+}
+
+
