@@ -28,7 +28,7 @@ public class NumberUtil {
 		return root;
 	}
 
-	public static int countDigits(int a)
+	public static int countDigits(long a)
 	{
 		return a == 0 ? 1 : (int)log10(abs(a)) + 1;
 	}
@@ -86,7 +86,14 @@ public class NumberUtil {
 
 	public static int [] getDigits(long a)
 	{
-		//TODO:
+		int [] digits = new int[countDigits(a)];
+
+		a = abs(a);
+
+		for (int i = digits.length - 1; i >= 0; digits[i] = (int)(a % 10), a /= 10, --i)
+			;
+
+		return digits;
 	}
 
 	public static int getDigitsPowSum(int a)

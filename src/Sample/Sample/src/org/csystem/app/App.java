@@ -1,14 +1,14 @@
 /*-----------------------------------------------------------------------------------------------------------------------
-	Sınıf Çalışması: Parametresi ile aldığı long türden bir long türden bir sayının basamaklarından oluşan diziyi
-	döndüren getDigits isimli metoduy NumberUtil sınıfı içerisinde yazınız ve aşağıdaki kod ile test ediniz
+	Seçerek sıralama algoritmasında en küçük eleman bulunur, ilk eleman ile yer değiştirilir. Dizi bir daraltılır, aynı
+	şey daraltılmış dizi için de yapılır. Böylece ilerlenir
 -----------------------------------------------------------------------------------------------------------------------*/
 package org.csystem.app;
 
-import org.csystem.util.test.GetDigitsTest;
+import org.csystem.util.test.SelectionSortTest;
 
 class App {
 	public static void main(String [] args)
 	{
-		GetDigitsTest.run();
+		SelectionSortTest.run();
 	}
 }
