@@ -1,7 +1,7 @@
 /*------------------------------------------------------------------
 	FILE		: NumberUtil.java
 	AUTHOR		: Java-Apr-2022 Group
-	LAST UPDATE	: 11.09.2022
+	LAST UPDATE	: 17.09.2022
 	
 	NumberUtil class for numeric operations
 	
@@ -27,7 +27,6 @@ public class NumberUtil {
 
 		return root;
 	}
-
 
 	public static int countDigits(int a)
 	{
@@ -67,7 +66,6 @@ public class NumberUtil {
 			result *= i;
 
 		return result;
-
 	}
 
 	public static int fibonacciNumber(int n)
@@ -84,6 +82,11 @@ public class NumberUtil {
 		}
 
 		return val;
+	}
+
+	public static int [] getDigits(long a)
+	{
+		//TODO:
 	}
 
 	public static int getDigitsPowSum(int a)
