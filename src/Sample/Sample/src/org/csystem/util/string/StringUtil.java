@@ -1,7 +1,7 @@
 /*------------------------------------------------------------------
 	FILE		: StringUtil.java
 	AUTHOR		: Java-Apr-2022 Group
-	LAST UPDATE	: 11.09.2022
+	LAST UPDATE	: 18.09.2022
 	
 	StringUtil class for string operations
 	
@@ -9,6 +9,8 @@
 	All Rights Free	
 ------------------------------------------------------------------ */
 package org.csystem.util.string;
+
+import org.csystem.util.array.ArrayUtil;
 
 import java.util.Random;
 
@@ -149,12 +151,7 @@ public class StringUtil {
 
     public static String getRandomTextEN(Random random, int count)
     {
-        String str = "";
-
-        for (int i = 0; i < count; ++i)
-            str += (char)((random.nextBoolean() ? 'A' : 'a') + random.nextInt(26));
-
-        return str;
+        return getRandomText(random, count, "abcdefghijklmnopqrstuwxvyzABCDEFGHIJKLMNOPQRSTUWXVYZ");
     }
 
     public static String getRandomTextEN(int count)
@@ -164,13 +161,13 @@ public class StringUtil {
 
     public static String getRandomText(Random random, int count, String sourceText)
     {
-        String str = "";
+        char [] c = new char[count];
         int len = sourceText.length();
 
         for (int i = 0; i < count; ++i)
-            str += sourceText.charAt(random.nextInt(len));
+            c[i] = sourceText.charAt(random.nextInt(len));
 
-        return str;
+        return String.valueOf(c);
     }
 
     public static boolean isPalindrome(String s)
@@ -258,12 +255,11 @@ public class StringUtil {
 
     public static String reverse(String str)
     {
-        String s = "";
+        char [] c = str.toCharArray();
 
-        for (int i = str.length() - 1; i >= 0; --i)
-            s += str.charAt(i); //**
+        ArrayUtil.reverse(c);
 
-        return s;
+        return String.valueOf(c);
     }
 }
 

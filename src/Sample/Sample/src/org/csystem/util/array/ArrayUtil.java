@@ -88,7 +88,12 @@ public class ArrayUtil {
 
     public static int [] getHistogramData(int [] a, int n)
     {
-        //TODO
+        int [] counts = new int[n + 1];
+
+        for (int i = 0; i < a.length; ++i)
+            ++counts[a[i]];
+
+        return counts;
     }
 
     public static int [] getRandomArray(int count, int min, int bound)
@@ -125,10 +130,28 @@ public class ArrayUtil {
         return result;
     }
 
+    public static int partition(int [] a, int threshold)
+    {
+        int partitionIndex = 0;
+
+        while (partitionIndex != a.length && a[partitionIndex] < threshold)
+            ++partitionIndex;
+
+        if (partitionIndex == a.length)
+            return partitionIndex;
+
+        for (int i = partitionIndex + 1; i < a.length; ++i)
+            if (a[i] < threshold)
+                swap(a, i, partitionIndex++);
+
+        return partitionIndex;
+    }
+
     public static void print(int [] a)
     {
         print(1, a);
     }
+
     public static void print(int n, int [] a)
     {
         String fmt = String.format("%%0%dd ", n);
@@ -140,6 +163,15 @@ public class ArrayUtil {
     }
 
     public static void reverse(int [] a)
+    {
+        int left = 0;
+        int right = a.length - 1;
+
+        while (left < right)
+            swap(a, left++, right--);
+    }
+
+    public static void reverse(char [] a)
     {
         int left = 0;
         int right = a.length - 1;
@@ -182,6 +214,14 @@ public class ArrayUtil {
     public static void swap(double [] a, int i, int k)
     {
         double temp = a[i];
+
+        a[i] = a[k];
+        a[k] = temp;
+    }
+
+    public static void swap(char [] a, int i, int k)
+    {
+        char temp = a[i];
 
         a[i] = a[k];
         a[k] = temp;
