@@ -12,80 +12,11 @@
 -----------------------------------------------------------------------------------------------------------------------*/
 package org.csystem.app;
 
-import org.csystem.util.string.StringUtil;
-
-import java.util.Random;
-import java.util.Scanner;
+import org.csystem.util.array.test.GetHistogramDataTest;
 
 class App {
 	public static void main(String [] args)
 	{
-		FirstNotRepeatingCharacterTest.run();
-	}
-}
-
-class FirstNotRepeatingCharacterTest {
-	public static void run()
-	{
-		Scanner kb = new Scanner(System.in);
-		FirstNotRepeatingCharacterRandomTest.run(kb);
-		FirstNotRepeatingCharacterInputTest.run(kb);
-		System.out.println("Tekrar yapıyor musunuz?");
-	}
-}
-
-class FirstNotRepeatingCharacterRandomTest {
-	public static void run(Scanner kb)
-	{
-		Random r = new Random();
-		System.out.print("Bir sayı giriniz:");
-		int count = Integer.parseInt(kb.nextLine());
-
-		while (count-- > 0) {
-			System.out.println("---------------------------------------");
-			String s = StringUtil.getRandomTextEN(r, r.nextInt(10, 21)).toLowerCase();
-
-			System.out.println(s);
-			char ch = Util.firstNotRepeatingCharacter(s);
-			System.out.printf("%s%n", ch == '_' ? "Tüm karakterler tekrarlıyor" : "İlk tekrarlanmayan karakter:" + ch);
-			System.out.println("---------------------------------------");
-		}
-	}
-}
-
-class FirstNotRepeatingCharacterInputTest {
-	public static void run(Scanner kb)
-	{
-		System.out.print("Bir sayı giriniz:");
-		int count = Integer.parseInt(kb.nextLine());
-
-		for (int i = 0; i < count; ++i) {
-			System.out.println("---------------------------------------");
-			System.out.print("Bir yazı giriniz:");
-			String s = kb.nextLine();
-			char ch = Util.firstNotRepeatingCharacter(s);
-			System.out.printf("%s%n", ch == '_' ? "Tüm karakterler tekrarlıyor" : "İlk tekrarlanmayan karakter:" + ch);
-			System.out.println("---------------------------------------");
- 		}
-	}
-}
-
-class Util {
-	public static char firstNotRepeatingCharacter(String s)
-	{
-		int [] counts = new int[26];
-		int len = s.length();
-
-		for (int i = 0; i < len; ++i)
-			++counts[s.charAt(i) - 'a'];
-
-		for (int i = 0; i < len; ++i) {
-			char ch = s.charAt(i);
-
-			if (counts[ch - 'a'] == 1)
-				return ch;
-		}
-
-		return '_';
+		GetHistogramDataTest.run();
 	}
 }
