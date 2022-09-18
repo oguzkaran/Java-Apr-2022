@@ -1,11 +1,11 @@
-package org.csystem.util.test;
+package org.csystem.util.array.test;
 
 import java.util.Random;
 import java.util.Scanner;
 
 import static org.csystem.util.array.ArrayUtil.*;
 
-public class SelectionSortTest {
+public class BubbleSortTest {
     public static void run()
     {
         Scanner kb = new Scanner(System.in);
@@ -23,7 +23,7 @@ public class SelectionSortTest {
             print(2, a);
 
             boolean desc = r.nextBoolean();
-            selectionSort(a, desc);
+            bubbleSort(a, desc);
             System.out.printf("%s sıralanmış dizi:%n", desc ? "Büyükten küçüğe" : "Küçükten büyüğe");
             print(2, a);
         }

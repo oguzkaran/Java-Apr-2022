@@ -1,19 +1,15 @@
-package org.csystem.util.test;
+package org.csystem.util.array.test;
 
 import java.util.Random;
 import java.util.Scanner;
 
 import static org.csystem.util.array.ArrayUtil.*;
 
-public class SumIntArrayTest {
+public class ReverseIntArrayTest {
 	public static void run()
 	{
 		Scanner kb = new Scanner(System.in);
 		Random r = new Random();
-		System.out.print("Birinci sayıyı giriniz:");
-		int min = Integer.parseInt(kb.nextLine());
-		System.out.print("İkinci sayıyı giriniz:");
-		int bound = Integer.parseInt(kb.nextLine());
 
 		for (;;) {
 			System.out.print("Dizinin eleman sayısını giriniz:");
@@ -22,10 +18,11 @@ public class SumIntArrayTest {
 			if (count <= 0)
 				break;
 
-			int [] a = getRandomArray(r, count, min, bound);
+			int [] a = getRandomArray(r, count, 0, 100);
 
-			print(a);
-			System.out.printf("Toplam:%d%n", sum(a));
+			print(2, a);
+			reverse(a);
+			print(2, a);
 		}
 
 		System.out.println("Tekrar yapıyor musunuz?");

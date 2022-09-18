@@ -1,11 +1,11 @@
-package org.csystem.util.test;
+package org.csystem.util.array.test;
 
 import java.util.Random;
 import java.util.Scanner;
 
 import static org.csystem.util.array.ArrayUtil.*;
 
-public class MinMaxIntArrayTest {
+public class SumIntArrayTest {
 	public static void run()
 	{
 		Scanner kb = new Scanner(System.in);
@@ -25,8 +25,7 @@ public class MinMaxIntArrayTest {
 			int [] a = getRandomArray(r, count, min, bound);
 
 			print(a);
-			System.out.printf("En büyük eleman:%d%n", max(a));
-			System.out.printf("En küçük eleman:%d%n", min(a));
+			System.out.printf("Toplam:%d%n", sum(a));
 		}
 
 		System.out.println("Tekrar yapıyor musunuz?");

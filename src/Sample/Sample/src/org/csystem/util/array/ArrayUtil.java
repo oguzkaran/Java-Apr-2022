@@ -1,7 +1,7 @@
 /*------------------------------------------------------------------
 	FILE		: ArrayUtil.java
 	AUTHOR		: Java-Apr-2022 Group
-	LAST UPDATE	: 17.09.2022
+	LAST UPDATE	: 18.09.2022
 
 	ArrayUtil class for array operations
 
@@ -84,6 +84,11 @@ public class ArrayUtil {
     {
         for (int i = 0; i < a.length; ++i)
             a[i] = random.nextInt(min, bound);
+    }
+
+    public static int [] getHistogramData(int [] a, int n)
+    {
+        //TODO
     }
 
     public static int [] getRandomArray(int count, int min, int bound)
