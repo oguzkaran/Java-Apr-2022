@@ -1,7 +1,7 @@
 /*------------------------------------------------------------------
 	FILE		: StringUtil.java
 	AUTHOR		: Java-Apr-2022 Group
-	LAST UPDATE	: 18.09.2022
+	LAST UPDATE	: 24.09.2022
 	
 	StringUtil class for string operations
 	
@@ -199,7 +199,6 @@ public class StringUtil {
             if (cLeft != cRight)
                 return false;
 
-
             ++left;
             --right;
             cLeftFound = false;
@@ -227,6 +226,41 @@ public class StringUtil {
     public static boolean isPangramTR(String s)
     {
         return isPangram(s.toLowerCase(), "abcçdefgğhıijklmnoöprsştuüvyz");
+    }
+
+
+    public static String join(String [] str, char ch)
+    {
+        return join(str, ch + "");
+    }
+
+    public static String join(String [] str, String delimiter)
+    {
+        String result = "";
+
+        for (int i = 0; i < str.length; ++i)
+            result += str[i] + delimiter;
+
+        return result.substring(0, result.length() - delimiter.length());
+    }
+
+    public static String join(String [] str, char ch , boolean removeBlanks)
+    {
+        return join(str, ch + "", removeBlanks);
+    }
+
+    public static String join(String [] str, String delimiter, boolean removeBlanks)
+    {
+        String result = "";
+
+        for (int i = 0; i < str.length; ++i) {
+            if (removeBlanks && str[i].isBlank())
+                continue;
+
+            result += str[i] + delimiter;
+        }
+
+        return result.substring(0, result.length() - delimiter.length());
     }
 
     public static String padLeading(String s, int len, char ch)

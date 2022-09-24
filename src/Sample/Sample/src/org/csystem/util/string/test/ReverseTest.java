@@ -2,10 +2,12 @@ package org.csystem.util.string.test;
 
 import org.csystem.util.string.StringUtil;
 
+import java.util.Scanner;
+
 public class ReverseTest {
 	public static void run()
 	{
-		java.util.Scanner kb = new java.util.Scanner(System.in);
+		Scanner kb = new Scanner(System.in);
 		
 		for (;;) {
 			System.out.print("Bir yazı giriniz:");
