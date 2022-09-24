@@ -8,12 +8,12 @@
  -----------------------------------------------------------------------------------------------------------------------*/
 package org.csystem.app;
 
-import org.csystem.util.numeric.test.GetDigitsInThreesTest;
+import org.csystem.util.numeric.test.GetDigitsInTwosTest;
 
 class App {
 	public static void main(String [] args)
 	{
-		GetDigitsInThreesTest.run();
+		GetDigitsInTwosTest.run();
 	}
 }
 
