@@ -1,7 +1,7 @@
 /*------------------------------------------------------------------
 	FILE		: NumberUtil.java
 	AUTHOR		: Java-Apr-2022 Group
-	LAST UPDATE	: 17.09.2022
+	LAST UPDATE	: 24.09.2022
 	
 	NumberUtil class for numeric operations
 	
@@ -13,6 +13,41 @@ package org.csystem.util.numeric;
 import static java.lang.Math.*;
 
 public class NumberUtil {
+	public static String [] onesTR = {"", "bir", "iki", "üç", "dört", "beş", "altı", "yedi", "sekiz", "dokuz"};
+	public static String [] tensTR = {"", "on", "yirmi", "otuz", "kırk", "elli", "altmış", "yetmiş", "seksen", "doksan"};
+
+	public static String numToText3DigitsTR(int a, int b, int c)
+	{
+		String str = "";
+
+		if (a != 0) {
+			if (a != 1)
+				str += onesTR[a];
+
+			str += "yüz";
+		}
+
+		if (b != 0)
+			str += tensTR[b];
+
+		if (c != 0)
+			str += onesTR[c];
+
+		return str;
+	}
+
+	public static String numToText3DigitsTR(int val)
+	{
+		if (val == 0)
+			return "sıfır";
+
+		String str = val < 0 ? "eksi" : "";
+
+		val = Math.abs(val);
+
+		return str + numToText3DigitsTR(val / 100, val / 10 % 10, val % 10);
+	}
+
 	public static boolean areFriends(int a, int b)
 	{
 		return sumFactors(a) == b && sumFactors(b) == a;
@@ -94,6 +129,11 @@ public class NumberUtil {
 			;
 
 		return digits;
+	}
+
+	public static int [] getDigitsInThrees(long a)
+	{
+		//TODO:
 	}
 
 	public static int getDigitsPowSum(int a)

@@ -36,6 +36,7 @@ public class DateApp {
 				break;
 			
 			DateUtil.printDateTR(day, month, year);
+			DateUtil.printDateEN(day, month, year);
 		}
 		
 		System.out.println("Tekrar yapıyor musunuz?");
