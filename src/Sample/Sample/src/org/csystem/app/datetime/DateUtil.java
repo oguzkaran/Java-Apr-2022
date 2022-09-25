@@ -40,6 +40,19 @@ public class DateUtil {
 		System.out.println(isWeekend(day, month, year) ? "That is the course day. Did you review?" : "Course day is coming. Donot forget to review!...");
 	}
 
+	public static String getDateStrTR(int day, int month, int year)
+	{
+		int dayOfWeek = getDayOfWeek(day, month, year);
+
+		return dayOfWeek == -1 ? "" : String.format("%d %s %d %s", day, monthsTR[month], year, dayOfWeeksTR[dayOfWeek]);
+	}
+
+	public static String getDateStrEN(int day, int month, int year)
+	{
+		int dayOfWeek = getDayOfWeek(day, month, year);
+
+		return dayOfWeek == -1 ? "" : String.format("%d%s %s %d %s", day, getDaySuffix(day), monthsEN[month], year, dayOfWeeksEN[dayOfWeek]);
+	}
 
 	public static int getDayOfWeek(int day, int month, int year)
 	{

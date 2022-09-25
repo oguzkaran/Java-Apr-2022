@@ -1,7 +1,7 @@
 /*------------------------------------------------------------------
 	FILE		: ArrayUtil.java
 	AUTHOR		: Java-Apr-2022 Group
-	LAST UPDATE	: 124.09.2022
+	LAST UPDATE	: 25.09.2022
 
 	ArrayUtil class for array operations
 
@@ -11,6 +11,8 @@
 package org.csystem.util.array;
 
 import java.util.Random;
+
+import static java.lang.Math.floor;
 
 public class ArrayUtil {
     public static void bubbleSortAscending(int [] a)
@@ -67,6 +69,17 @@ public class ArrayUtil {
         }
     }
 
+    public static int [][] addMatrices(int [][] m1, int [][] m2)
+    {
+        //TODO:
+        return new int[m1.length][m1[0].length];
+    }
+
+    public static void addMatrixBy(int [][] m, int val)
+    {
+        //TODO:
+    }
+
     public static double average(int [] a)
     {
         return sum(a) / (double)a.length;
@@ -83,6 +96,19 @@ public class ArrayUtil {
             bubbleSortDescending(a);
         else
             bubbleSortAscending(a);
+    }
+
+    public static void drawHistogram(int [] data, int countMaxVal, char ch)
+    {
+        int maxVal = max(data);
+
+        for (int i = 0; i < data.length; ++i) {
+            int charCount = (int)floor(data[i] * countMaxVal / (double)maxVal);
+
+            while (charCount-- > 0)
+                System.out.print(ch);
+            System.out.println();
+        }
     }
 
     public static void fillRandomArray(Random random, int [] a, int min, int bound)
@@ -115,6 +141,45 @@ public class ArrayUtil {
         return a;
     }
 
+    public static int [][] getRandomMatrix(int m, int n, int min, int bound)
+    {
+        return getRandomMatrix(new Random(), m, n, min, bound);
+    }
+
+    public static int [][] getRandomMatrix(Random r, int m, int n, int min, int bound)
+    {
+        int [][] result = new int[m][];
+
+        for (int i = 0; i < m; ++i)
+            result[i] = getRandomArray(r, n, min, bound);
+
+        return result;
+    }
+
+    public static int [][] getRandomSquareMatrix(int n, int min, int bound)
+    {
+        return getRandomSquareMatrix(new Random(), n, min, bound);
+    }
+
+    public static int [][] getRandomSquareMatrix(Random r, int n, int min, int bound)
+    {
+        return getRandomMatrix(r, n, n, min, bound);
+    }
+
+    public static boolean isMatrix(int [][] a)
+    {
+        for (int i = 1; i < a.length; ++i)
+            if (a[i].length != a[0].length)
+                return false;
+
+        return true;
+    }
+
+    public static boolean isSquareMatrix(int [][] a)
+    {
+        return isMatrix(a) && a.length == a[0].length;
+    }
+
     public static int max(int [] a)
     {
         int result = a[0];
@@ -133,6 +198,12 @@ public class ArrayUtil {
             result = Math.min(a[i], result);
 
         return result;
+    }
+
+    public static int [][] multiplyMatrices(int [][] m1, int [][] m2)
+    {
+        //TODO:
+        return new int[m1.length][m2[0].length];
     }
 
     public static int partition(int [] a, int threshold)
@@ -167,6 +238,17 @@ public class ArrayUtil {
         System.out.println();
     }
 
+    public static void print(int [][] a)
+    {
+        print(1, a);
+    }
+
+    public static void print(int n, int [][] a)
+    {
+        for (int i = 0; i < a.length; ++i)
+            print(n, a[i]);
+    }
+
     public static void reverse(int [] a)
     {
         int left = 0;
@@ -198,12 +280,27 @@ public class ArrayUtil {
             selectionSortAscending(a);
     }
 
+    public static int [][] subtractMatrices(int [][] m1, int [][] m2)
+    {
+        //TODO:
+        return new int[m1.length][m2[0].length];
+    }
+
     public static int sum(int [] a)
     {
         int total = 0;
 
         for (int i = 0; i < a.length; ++i)
             total += a[i];
+
+        return total;
+    }
+    public static int sumDiagonal(int [][] a)
+    {
+        int total = 0;
+
+        for (int i = 0; i < a.length; ++i)
+            total += a[i][i];
 
         return total;
     }
@@ -230,5 +327,16 @@ public class ArrayUtil {
 
         a[i] = a[k];
         a[k] = temp;
+    }
+
+    public static int [][] transpose(int [][] a)
+    {
+        int [][] result = new int[a[0].length][a.length];
+
+        for (int i = 0; i < a.length; ++i)
+            for (int j = 0; j < a[i].length; ++j)
+                result[j][i] = a[i][j];
+
+        return result;
     }
 }
