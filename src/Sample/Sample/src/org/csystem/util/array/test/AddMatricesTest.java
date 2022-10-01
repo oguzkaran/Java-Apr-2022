@@ -15,14 +15,16 @@ public class AddMatricesTest {
 		int count = kb.nextInt();
 
 		for (int i = 0; i < count; ++i) {
-			int [][] m1 = ArrayUtil.getRandomMatrix(r, r.nextInt(3, 8), r.nextInt(3, 8), 0, 99);
-			int [][] m2 = ArrayUtil.getRandomMatrix(r, r.nextInt(3, 8), r.nextInt(3, 8), 0, 99);
+			int m = r.nextInt(3, 8);
+			int n = r.nextInt(3, 8);
+			int [][] m1 = ArrayUtil.getRandomMatrix(r, m, n, 0, 99);
+			int [][] m2 = ArrayUtil.getRandomMatrix(r, m, n, 0, 99);
 			System.out.println("----------------------------------------------------");
 			ArrayUtil.print(2, m1);
 			System.out.println("+");
 			ArrayUtil.print(2, m2);
 			System.out.println("=");
-			ArrayUtil.print(2, ArrayUtil.addMatrices(m1, m2));
+			ArrayUtil.print(3, ArrayUtil.addMatrices(m1, m2));
 			System.out.println("----------------------------------------------------");
 		}
 

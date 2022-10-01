@@ -1,7 +1,7 @@
 /*------------------------------------------------------------------
 	FILE		: ArrayUtil.java
 	AUTHOR		: Java-Apr-2022 Group
-	LAST UPDATE	: 25.09.2022
+	LAST UPDATE	: 01.10.2022
 
 	ArrayUtil class for array operations
 
@@ -71,13 +71,22 @@ public class ArrayUtil {
 
     public static int [][] addMatrices(int [][] m1, int [][] m2)
     {
-        //TODO:
-        return new int[m1.length][m1[0].length];
+        int [][] total = new int[m1.length][m1[0].length];
+        int row = m1.length;
+        int col = m1[0].length;
+
+        for (int i = 0; i < row; ++i)
+            for (int j = 0; j < col; ++j)
+                total[i][j] = m1[i][j] + m2[i][j];
+
+        return total;
     }
 
     public static void addMatrixBy(int [][] m, int val)
     {
-        //TODO:
+        for (int i = 0; i < m.length; ++i)
+            for (int j = 0; j < m[i].length; ++j)
+                m[i][j] += val;
     }
 
     public static double average(int [] a)
@@ -282,8 +291,15 @@ public class ArrayUtil {
 
     public static int [][] subtractMatrices(int [][] m1, int [][] m2)
     {
-        //TODO:
-        return new int[m1.length][m2[0].length];
+        int [][] total = new int[m1.length][m1[0].length];
+        int row = m1.length;
+        int col = m1[0].length;
+
+        for (int i = 0; i < row; ++i)
+            for (int j = 0; j < col; ++j)
+                total[i][j] = m1[i][j] - m2[i][j];
+
+        return total;
     }
 
     public static int sum(int [] a)

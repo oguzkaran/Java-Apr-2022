@@ -1,22 +1,17 @@
 /*-----------------------------------------------------------------------------------------------------------------------
-	Sınıf Çalışması: Bir okulda Fizik ortak sınavı yapılıyor olsun. Kaç şube ve herbir şubede kaç öğrenci olduğu bilgisi
-	klavyeden alınsın. Öğrencilerin notları rasgele olarak belirlensin. Tüm işlemlerinden sonra Fizik sınavı için
-	her bir şubenin ayrı ayrı not ortalamaları ile okulun not ortalamasını bulan simülasyonu yazınızç.
-	Açıklamalar:
-		- Notlar int olarak tutulacaktır
-		- Programı mümkün olduğunda nesne yönelimli ve genel düşünerek yazınız
- 	Not: İleride daha iyisi yazılacaktır
- -----------------------------------------------------------------------------------------------------------------------*/
+	İstenirse toCharArray metodu ile tüm karakterler yine for-each döngü deyimi ile dolaşılabilir
+-----------------------------------------------------------------------------------------------------------------------*/
 package org.csystem.app;
-
-import org.csystem.util.array.test.SubtractMatricesTest;
 
 class App {
 	public static void main(String [] args)
 	{
-		SubtractMatricesTest.run();
+		String s = "ankara";
+
+		for (char c : s.toCharArray())
+			System.out.printf("%c ", c);
+
+		System.out.println();
 	}
 }
-
-
 
