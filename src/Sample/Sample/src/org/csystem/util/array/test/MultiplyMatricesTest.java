@@ -15,14 +15,18 @@ public class MultiplyMatricesTest {
 		int count = kb.nextInt();
 
 		for (int i = 0; i < count; ++i) {
-			int [][] m1 = ArrayUtil.getRandomMatrix(r, r.nextInt(3, 8), r.nextInt(3, 8), 0, 99);
-			int [][] m2 = ArrayUtil.getRandomMatrix(r, r.nextInt(3, 8), r.nextInt(3, 8), 0, 99);
+			int m = r.nextInt(3, 5);
+			int n = r.nextInt(3, 5);
+			int k = r.nextInt(3, 5);
+			int [][] m1 = ArrayUtil.getRandomMatrix(r, m, n, 0, 99);
+			int [][] m2 = ArrayUtil.getRandomMatrix(r, n, k, 0, 99);
 			System.out.println("----------------------------------------------------");
+			System.out.printf("%d X %d * %d X %d = %d X %d%n", m, n, n, k, m, k);
 			ArrayUtil.print(2, m1);
-			System.out.println("+");
+			System.out.println("*");
 			ArrayUtil.print(2, m2);
 			System.out.println("=");
-			ArrayUtil.print(2, ArrayUtil.multiplyMatrices(m1, m2));
+			ArrayUtil.print(5, ArrayUtil.multiplyMatrices(m1, m2));
 			System.out.println("----------------------------------------------------");
 		}
 

@@ -1,7 +1,7 @@
 /*------------------------------------------------------------------
 	FILE		: NumberUtil.java
 	AUTHOR		: Java-Apr-2022 Group
-	LAST UPDATE	: 24.09.2022
+	LAST UPDATE	: 02.10.2022
 	
 	NumberUtil class for numeric operations
 	
@@ -367,18 +367,6 @@ public class NumberUtil {
 				System.out.printf("%d + %d = %d == %d%n", x, y, x + y, a);
 		}
 	}
-
-	public static int signum(int a)
-	{
-		if (a > 0)
-			return 1;
-
-		if (a == 0)
-			return 0;
-
-		return -1;
-	}
-
 
 	public static int sumDigits(int a)
 	{

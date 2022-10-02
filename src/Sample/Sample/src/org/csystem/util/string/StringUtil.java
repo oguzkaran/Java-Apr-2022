@@ -1,7 +1,7 @@
 /*------------------------------------------------------------------
 	FILE		: StringUtil.java
 	AUTHOR		: Java-Apr-2022 Group
-	LAST UPDATE	: 24.09.2022
+	LAST UPDATE	: 02.10.2022
 	
 	StringUtil class for string operations
 	
@@ -238,8 +238,8 @@ public class StringUtil {
     {
         String result = "";
 
-        for (int i = 0; i < str.length; ++i)
-            result += str[i] + delimiter;
+        for (String s : str)
+            result += s + delimiter;
 
         return result.substring(0, result.length() - delimiter.length());
     }
@@ -253,11 +253,11 @@ public class StringUtil {
     {
         String result = "";
 
-        for (int i = 0; i < str.length; ++i) {
-            if (removeBlanks && str[i].isBlank())
+        for (String s : str) {
+            if (removeBlanks && s.isBlank())
                 continue;
 
-            result += str[i] + delimiter;
+            result += s + delimiter;
         }
 
         return result.substring(0, result.length() - delimiter.length());

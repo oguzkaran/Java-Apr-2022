@@ -1,7 +1,7 @@
 /*------------------------------------------------------------------
 	FILE		: ArrayUtil.java
 	AUTHOR		: Java-Apr-2022 Group
-	LAST UPDATE	: 01.10.2022
+	LAST UPDATE	: 02.10.2022
 
 	ArrayUtil class for array operations
 
@@ -111,8 +111,8 @@ public class ArrayUtil {
     {
         int maxVal = max(data);
 
-        for (int i = 0; i < data.length; ++i) {
-            int charCount = (int)floor(data[i] * countMaxVal / (double)maxVal);
+        for (int val : data) {
+            int charCount = (int)floor(val * countMaxVal / (double)maxVal);
 
             while (charCount-- > 0)
                 System.out.print(ch);
@@ -130,8 +130,8 @@ public class ArrayUtil {
     {
         int [] counts = new int[n + 1];
 
-        for (int i = 0; i < a.length; ++i)
-            ++counts[a[i]];
+        for (int val : a)
+            ++counts[val];
 
         return counts;
     }
@@ -211,8 +211,18 @@ public class ArrayUtil {
 
     public static int [][] multiplyMatrices(int [][] m1, int [][] m2)
     {
-        //TODO:
-        return new int[m1.length][m2[0].length];
+        int [][] result = new int[m1.length][m2[0].length];
+
+        int row1 = result.length;
+        int col1 = result[0].length;
+        int row2 = m2.length;
+
+        for (int i = 0; i < row1; ++i)
+            for (int j = 0; j < col1; ++j)
+                for (int k = 0; k < row2; ++k)
+                    result[i][j] += m1[i][k] * m2[k][j];
+
+        return result;
     }
 
     public static int partition(int [] a, int threshold)
@@ -241,8 +251,8 @@ public class ArrayUtil {
     {
         String fmt = String.format("%%0%dd ", n);
 
-        for (int i = 0; i < a.length; ++i)
-            System.out.printf(fmt, a[i]);
+        for (int val : a)
+            System.out.printf(fmt, val);
 
         System.out.println();
     }
@@ -254,8 +264,8 @@ public class ArrayUtil {
 
     public static void print(int n, int [][] a)
     {
-        for (int i = 0; i < a.length; ++i)
-            print(n, a[i]);
+        for (int[] ints : a)
+            print(n, ints);
     }
 
     public static void reverse(int [] a)
@@ -306,8 +316,8 @@ public class ArrayUtil {
     {
         int total = 0;
 
-        for (int i = 0; i < a.length; ++i)
-            total += a[i];
+        for (int val : a)
+            total += val;
 
         return total;
     }

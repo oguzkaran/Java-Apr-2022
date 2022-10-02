@@ -66,9 +66,9 @@ public class CommandPrompt {
 
     public static String findCommandByPrefix(String prefix)
     {
-        for (int i = 0; i < commands.length; ++i)
-            if (commands[i].startsWith(prefix))
-                return commands[i];
+        for (String command : commands)
+            if (command.startsWith(prefix))
+                return command;
 
         return "";
     }

@@ -1,7 +1,5 @@
 package org.csystem.app.lottery;
 
-import org.csystem.util.array.ArrayUtil;
-
 import java.util.Random;
 
 public class NumericLottery {
