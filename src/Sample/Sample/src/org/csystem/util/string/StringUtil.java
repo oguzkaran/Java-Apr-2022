@@ -1,7 +1,7 @@
 /*------------------------------------------------------------------
 	FILE		: StringUtil.java
 	AUTHOR		: Java-Apr-2022 Group
-	LAST UPDATE	: 02.10.2022
+	LAST UPDATE	: 08.10.2022
 	
 	StringUtil class for string operations
 	
@@ -15,6 +15,9 @@ import org.csystem.util.array.ArrayUtil;
 import java.util.Random;
 
 public class StringUtil {
+    private StringUtil()
+    {}
+
     public static String capitalize(String str)
     {
         return str.isEmpty() ? "" : Character.toUpperCase(str.charAt(0)) + str.substring(1).toLowerCase();

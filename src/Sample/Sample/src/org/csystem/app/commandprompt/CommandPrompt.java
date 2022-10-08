@@ -5,10 +5,10 @@ import org.csystem.util.string.StringUtil;
 import java.util.Scanner;
 
 public class CommandPrompt {
-    public static String [] commands = {"length", "reverse", "upper", "lower", "changep", "quit"};
-    public String prompt;
+    private static String [] ms_commands = {"length", "reverse", "upper", "lower", "changep", "quit"};
+    private String m_prompt;
 
-    public static void lengthCallback(String [] commandInfo)
+    private static void lengthCallback(String [] commandInfo)
     {
         if (commandInfo.length < 2) {
             System.out.println("Invalid arguments");
@@ -18,7 +18,7 @@ public class CommandPrompt {
         System.out.println(commandInfo[1].length());
     }
 
-    public static void reverseCallback(String [] commandInfo)
+    private static void reverseCallback(String [] commandInfo)
     {
         if (commandInfo.length < 2) {
             System.out.println("Invalid arguments");
@@ -28,7 +28,7 @@ public class CommandPrompt {
         System.out.println(StringUtil.reverse(commandInfo[1]));
     }
 
-    public static void upperCallback(String [] commandInfo)
+    private static void upperCallback(String [] commandInfo)
     {
         if (commandInfo.length < 2) {
             System.out.println("Invalid arguments");
@@ -38,7 +38,7 @@ public class CommandPrompt {
         System.out.println(commandInfo[1].toUpperCase());
     }
 
-    public static void lowerCallback(String [] commandInfo)
+    private static void lowerCallback(String [] commandInfo)
     {
         if (commandInfo.length < 2) {
             System.out.println("Invalid arguments");
@@ -48,32 +48,32 @@ public class CommandPrompt {
         System.out.println(commandInfo[1].toLowerCase());
     }
 
-    public void changePromptCallback(String [] commandInfo)
+    private void changePromptCallback(String [] commandInfo)
     {
         if (commandInfo.length < 2) {
             System.out.println("Invalid arguments");
             return;
         }
 
-        prompt = commandInfo[1];
+        m_prompt = commandInfo[1];
     }
 
-    public static void quitCallback(String [] commandInfo)
+    private static void quitCallback(String [] commandInfo)
     {
         System.out.println("C and System Programmers Association");
         System.exit(0);
     }
 
-    public static String findCommandByPrefix(String prefix)
+    private static String findCommandByPrefix(String prefix)
     {
-        for (String command : commands)
+        for (String command : ms_commands)
             if (command.startsWith(prefix))
                 return command;
 
         return "";
     }
 
-    public void doCommand(String [] commandInfo)
+    private void doCommand(String [] commandInfo)
     {
         switch (commandInfo[0]) {
             case "length" -> lengthCallback(commandInfo);
@@ -85,7 +85,7 @@ public class CommandPrompt {
         }
     }
 
-    public void parseCommand(String cmd)
+    private void parseCommand(String cmd)
     {
         String [] commandInfo = cmd.split("[ \t]+");
 
@@ -105,7 +105,7 @@ public class CommandPrompt {
 
     public CommandPrompt(String p)
     {
-        prompt = p;
+        m_prompt = p;
     }
 
     public void run()
@@ -113,7 +113,7 @@ public class CommandPrompt {
         Scanner kb = new Scanner(System.in);
 
         for (;;) {
-            System.out.print(prompt + ">");
+            System.out.print(m_prompt + ">");
             parseCommand(kb.nextLine().strip());
         }
     }

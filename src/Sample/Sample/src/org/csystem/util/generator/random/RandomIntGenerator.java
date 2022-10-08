@@ -4,7 +4,7 @@
 	LAST UPDATE	: 02.10.2022
 
 	RandomIntGenerator class that creates a random generated array
-	once and gives the copy of array
+	once
 
 	Copyleft (c) 1993 by C and System Programmers Association
 	All Rights Free
@@ -13,7 +13,6 @@ package org.csystem.util.generator.random;
 
 import org.csystem.util.array.ArrayUtil;
 
-import java.util.Arrays;
 import java.util.Random;
 
 public class RandomIntGenerator {
@@ -24,8 +23,13 @@ public class RandomIntGenerator {
         m_numbers = ArrayUtil.getRandomArray(random, count, min, bound);
     }
 
-    public int [] getNumbers()
+    public int getCount()
     {
-        return Arrays.copyOf(m_numbers, m_numbers.length);
+        return m_numbers.length;
+    }
+
+    public int get(int index)
+    {
+        return m_numbers[index];
     }
 }

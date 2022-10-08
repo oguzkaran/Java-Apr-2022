@@ -9,7 +9,7 @@ public class BallFallApp {
 		BallFall bf = new BallFall();
 		
 		for (;;) {
-			System.out.print("Yüksekliği ve genişliği giriniz:");
+			System.out.print("Genişliği ve yüksekliği giriniz:");
 			int width = kb.nextInt();
 			int height = kb.nextInt();
 			
@@ -17,7 +17,7 @@ public class BallFallApp {
 				break;
 			
 			bf.play(width, height);
-			System.out.println(bf.shape);
+			System.out.println(bf.getShape());
 		}
 		
 		System.out.println("Tekrar yapıyor musunuz?");

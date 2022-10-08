@@ -36,17 +36,17 @@ package org.csystem.app.school;
 import java.util.Scanner;
 
 public class LectureStudentInfoParserApp {
-    public static void printReport(LectureStudentInfo info)
+    private static void printReport(LectureStudentInfo info)
     {
         int grade = info.getGrade();
 
         System.out.println("--------------------------------------------------");
-        System.out.printf("Adı Soyadı: %s%n", info.studentName);
-        System.out.printf("Ders Adı: %s%n", info.lectureName);
-        System.out.printf("Arasınav Tarihi: %s%n", info.midtermDate);
-        System.out.printf("Final Tarihi: %s%n", info.finalDate);
-        System.out.printf("Arasınav Notu: %d%n", info.midTermGrade);
-        System.out.printf("Final Notu: %d%n", info.finalGrade);
+        System.out.printf("Adı Soyadı: %s%n", info.getStudentName());
+        System.out.printf("Ders Adı: %s%n", info.getLectureName());
+        System.out.printf("Arasınav Tarihi: %s%n", info.getMidtermDate());
+        System.out.printf("Final Tarihi: %s%n", info.getFinalDate());
+        System.out.printf("Arasınav Notu: %d%n", info.getMidTermGrade());
+        System.out.printf("Final Notu: %d%n", info.getFinalGrade());
         System.out.printf("Geçme Notu: %d%n", grade);
         System.out.printf("Sonuç: %s%n", grade >= 50 ? "Geçti" : "Kaldı");
         System.out.println("--------------------------------------------------");
@@ -65,7 +65,7 @@ public class LectureStudentInfoParserApp {
 
             LectureStudentInfoParser parser = new LectureStudentInfoParser(str);
 
-            printReport(parser.lectureStudentInfo);
+            printReport(parser.getLectureStudentInfo());
         }
     }
 }

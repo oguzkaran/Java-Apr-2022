@@ -1,7 +1,7 @@
 /*------------------------------------------------------------------
 	FILE		: NumberUtil.java
 	AUTHOR		: Java-Apr-2022 Group
-	LAST UPDATE	: 02.10.2022
+	LAST UPDATE	: 08.10.2022
 	
 	NumberUtil class for numeric operations
 	
@@ -13,10 +13,13 @@ package org.csystem.util.numeric;
 import static java.lang.Math.*;
 
 public class NumberUtil {
-	public static String [] onesTR = {"", "bir", "iki", "üç", "dört", "beş", "altı", "yedi", "sekiz", "dokuz"};
-	public static String [] tensTR = {"", "on", "yirmi", "otuz", "kırk", "elli", "altmış", "yetmiş", "seksen", "doksan"};
+	private static String [] ms_onesTR = {"", "bir", "iki", "üç", "dört", "beş", "altı", "yedi", "sekiz", "dokuz"};
+	private static String [] ms_tensTR = {"", "on", "yirmi", "otuz", "kırk", "elli", "altmış", "yetmiş", "seksen", "doksan"};
 
-	public static int [] getDigits(long a, int n)
+	private NumberUtil()
+	{}
+
+	private static int [] getDigits(long a, int n)
 	{
 		int [] digits = new int[(int)(log10(abs(a)) / n) + 1];
 
@@ -29,27 +32,27 @@ public class NumberUtil {
 		return digits;
 	}
 
-	public static String numToText3DigitsTR(int a, int b, int c)
+	private static String numToText3DigitsTR(int a, int b, int c)
 	{
 		String str = "";
 
 		if (a != 0) {
 			if (a != 1)
-				str += onesTR[a];
+				str += ms_onesTR[a];
 
 			str += "yüz";
 		}
 
 		if (b != 0)
-			str += tensTR[b];
+			str += ms_tensTR[b];
 
 		if (c != 0)
-			str += onesTR[c];
+			str += ms_onesTR[c];
 
 		return str;
 	}
 
-	public static String numToText3DigitsTR(int val)
+	private static String numToText3DigitsTR(int val)
 	{
 		if (val == 0)
 			return "sıfır";

@@ -17,7 +17,13 @@ import static java.lang.Math.sqrt;
 public class Point {
 	private double m_x;
 	private double m_y;
-	
+
+	Point(Point p)
+	{
+		m_x = p.m_x;
+		m_y = p.m_y;
+	}
+
 	public Point()	
 	{		
 	}

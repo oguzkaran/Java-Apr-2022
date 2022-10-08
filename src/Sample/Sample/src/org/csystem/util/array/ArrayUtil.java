@@ -3,7 +3,7 @@
 	AUTHOR		: Java-Apr-2022 Group
 	LAST UPDATE	: 08.10.2022
 
-	ArrayUtil class for array operations
+	Utility ArrayUtil class for array operations
 
 	Copyleft (c) 1993 by C and System Programmers Association
 	All Rights Free
@@ -15,7 +15,11 @@ import java.util.Random;
 import static java.lang.Math.floor;
 
 public class ArrayUtil {
-    public static void bubbleSortAscending(int [] a)
+
+    private ArrayUtil()
+    {}
+
+    private static void bubbleSortAscending(int [] a)
     {
         for (int i = 0; i < a.length - 1; ++i)
             for (int k = 0; k < a.length - 1 - i; ++k)
@@ -23,7 +27,7 @@ public class ArrayUtil {
                     swap(a, k, k + 1);
     }
 
-    public static void bubbleSortDescending(int [] a)
+    private static void bubbleSortDescending(int [] a)
     {
         for (int i = 0; i < a.length - 1; ++i)
             for (int k = 0; k < a.length - 1 - i; ++k)
@@ -31,7 +35,7 @@ public class ArrayUtil {
                     swap(a, k, k + 1);
     }
 
-    public static void selectionSortAscending(int [] a)
+    private static void selectionSortAscending(int [] a)
     {
         int min, minIndex;
 
@@ -50,7 +54,7 @@ public class ArrayUtil {
         }
     }
 
-    public static void selectionSortDescending(int [] a)
+    private static void selectionSortDescending(int [] a)
     {
         int max, maxIndex;
 
