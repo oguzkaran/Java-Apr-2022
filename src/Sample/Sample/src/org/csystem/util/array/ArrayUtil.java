@@ -1,7 +1,7 @@
 /*------------------------------------------------------------------
 	FILE		: ArrayUtil.java
 	AUTHOR		: Java-Apr-2022 Group
-	LAST UPDATE	: 02.10.2022
+	LAST UPDATE	: 08.10.2022
 
 	ArrayUtil class for array operations
 
@@ -67,6 +67,12 @@ public class ArrayUtil {
             a[maxIndex] = a[i];
             a[i] = max;
         }
+    }
+
+    public static void addBy(int [] a, int val)
+    {
+        for (int i = 0; i < a.length; ++i)
+            a[i] += val;
     }
 
     public static int [][] addMatrices(int [][] m1, int [][] m2)
@@ -207,6 +213,12 @@ public class ArrayUtil {
             result = Math.min(a[i], result);
 
         return result;
+    }
+
+    public static void multiplyBy(int [] a, int val)
+    {
+        for (int i = 0; i < a.length; ++i)
+            a[i] *= val;
     }
 
     public static int [][] multiplyMatrices(int [][] m1, int [][] m2)
