@@ -8,7 +8,7 @@ public class Lotto {
     private boolean m_winGame1;
     private boolean m_winGame2;
     private boolean m_winGame3;
-    private Random m_random;
+    private final Random m_random;
 
     private int getFirst()
     {

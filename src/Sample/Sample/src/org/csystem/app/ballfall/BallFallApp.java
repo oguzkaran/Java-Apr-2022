@@ -2,10 +2,12 @@ package org.csystem.app.ballfall;
 
 import org.csystem.game.ballfall.BallFall;
 
+import java.util.Scanner;
+
 public class BallFallApp {
 	public static void run()
 	{
-		java.util.Scanner kb = new java.util.Scanner(System.in);
+		Scanner kb = new Scanner(System.in);
 		BallFall bf = new BallFall();
 		
 		for (;;) {

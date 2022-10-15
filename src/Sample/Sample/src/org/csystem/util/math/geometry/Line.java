@@ -1,7 +1,7 @@
 /*------------------------------------------------------------------
 	FILE		: Line.java
 	AUTHOR		: Java-Apr-2022 Group
-	LAST UPDATE	: 08.10.2022
+	LAST UPDATE	: 15.10.2022
 
 	Line class that represents a circle
 
@@ -11,8 +11,8 @@
 package org.csystem.util.math.geometry;
 
 public class Line {
-    private Point m_p1;
-    private Point m_p2;
+    private final Point m_p1;
+    private final Point m_p2;
 
     //...
     public Line(double x1, double y1, double x2, double y2)

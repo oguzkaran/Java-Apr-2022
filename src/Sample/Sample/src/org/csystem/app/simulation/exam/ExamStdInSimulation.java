@@ -6,9 +6,9 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class ExamStdInSimulation {
-    private String m_lectureName;
-    private String m_countPrompt;
-    private String m_stepPrompt;
+    private final String m_lectureName;
+    private final String m_countPrompt;
+    private final String m_stepPrompt;
     private int [][] m_grades;
     private double [] m_averages;
     private double m_average;

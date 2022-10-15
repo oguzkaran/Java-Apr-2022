@@ -5,7 +5,7 @@ import org.csystem.util.string.StringUtil;
 import java.util.Scanner;
 
 public class CommandPrompt {
-    private static String [] ms_commands = {"length", "reverse", "upper", "lower", "changep", "quit"};
+    private static final String [] COMMANDS = {"length", "reverse", "upper", "lower", "changep", "quit"};
     private String m_prompt;
 
     private static void lengthCallback(String [] commandInfo)
@@ -66,7 +66,7 @@ public class CommandPrompt {
 
     private static String findCommandByPrefix(String prefix)
     {
-        for (String command : ms_commands)
+        for (String command : COMMANDS)
             if (command.startsWith(prefix))
                 return command;
 

@@ -3,7 +3,7 @@ package org.csystem.app.school;
 import org.csystem.app.datetime.DateUtil;
 
 public class LectureStudentInfoParser {
-    private LectureStudentInfo m_lectureStudentInfo;
+    private final LectureStudentInfo m_lectureStudentInfo;
 
     private static String getDateStr(String str)
     {

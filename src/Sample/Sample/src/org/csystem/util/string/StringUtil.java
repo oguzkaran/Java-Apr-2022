@@ -1,7 +1,7 @@
 /*------------------------------------------------------------------
 	FILE		: StringUtil.java
 	AUTHOR		: Java-Apr-2022 Group
-	LAST UPDATE	: 08.10.2022
+	LAST UPDATE	: 15.10.2022
 	
 	StringUtil class for string operations
 	
@@ -15,6 +15,13 @@ import org.csystem.util.array.ArrayUtil;
 import java.util.Random;
 
 public class StringUtil {
+    private static final String ALPHABET_TR = "abcçdefgğhıijklmnoöprsştuüvyz";
+    private static final String ALPHABET_EN = "abcdefghijklmnopqrstuwxvyz";
+    private static final String ALPHABET_CAPITAL_TR = "ABCÇDEFGĞHIİJKLMNOÖPRSŞTUÜVYZ";
+    private static final String ALPHABET_CAPITAL_EN = "ABCDEFGHIJKLMNOPQRSTUWXVYZ";
+    private static final String ALPHABET_ALL_TR = ALPHABET_TR + ALPHABET_CAPITAL_TR;
+    private static final String ALPHABET_ALL_EN = ALPHABET_EN + ALPHABET_CAPITAL_EN;
+
     private StringUtil()
     {}
 
@@ -144,7 +151,7 @@ public class StringUtil {
 
     public static String getRandomTextTR(Random random, int count)
     {
-        return getRandomText(random, count, "abcçdefgğhıijklmnoöprsştuüvyzABCÇDEFGĞHIİJKLMNOÖPRSŞTUÜVYZ");
+        return getRandomText(random, count, ALPHABET_ALL_TR);
     }
 
     public static String getRandomTextTR(int count)
@@ -154,7 +161,7 @@ public class StringUtil {
 
     public static String getRandomTextEN(Random random, int count)
     {
-        return getRandomText(random, count, "abcdefghijklmnopqrstuwxvyzABCDEFGHIJKLMNOPQRSTUWXVYZ");
+        return getRandomText(random, count, ALPHABET_ALL_EN);
     }
 
     public static String getRandomTextEN(int count)
@@ -223,12 +230,12 @@ public class StringUtil {
 
     public static boolean isPangramEN(String s)
     {
-        return isPangram(s.toLowerCase(), "abcdefghijklmnopqrstuwxvyz");
+        return isPangram(s.toLowerCase(), ALPHABET_EN);
     }
 
     public static boolean isPangramTR(String s)
     {
-        return isPangram(s.toLowerCase(), "abcçdefgğhıijklmnoöprsştuüvyz");
+        return isPangram(s.toLowerCase(), ALPHABET_TR);
     }
 
 
