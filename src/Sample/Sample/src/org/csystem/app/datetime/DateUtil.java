@@ -1,6 +1,14 @@
 package org.csystem.app.datetime;
 
 public class DateUtil {
+	public static void printRandomDate(java.util.Random r)
+	{
+		int year = r.nextInt(1900, 2101);
+		int month = r.nextInt(1, 13);
+		int day = r.nextInt(1, getDays(month, year) + 1);
+
+		printDateEN(day, month, year);
+	}
 	public static int [] daysOfMonths = {0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
 
 	public static String [] monthsTR = {"", "Ocak", "Şubat", "Mart", "Nisan", "Mayıs", "Haziran",
