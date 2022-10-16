@@ -23,12 +23,12 @@ public class Line {
 
     public Point getPoint1()
     {
-        return new Point(m_p1);
+        return m_p1;
     }
 
     public Point getPoint2()
     {
-        return new Point(m_p2);
+        return m_p2;
     }
 
     public double getX1()
