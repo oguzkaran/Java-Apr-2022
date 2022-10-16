@@ -1,7 +1,7 @@
 /*------------------------------------------------------------------
 	FILE		: Line.java
 	AUTHOR		: Java-Apr-2022 Group
-	LAST UPDATE	: 15.10.2022
+	LAST UPDATE	: 16.10.2022
 
 	Line class that represents a circle
 
@@ -17,8 +17,8 @@ public class Line {
     //...
     public Line(double x1, double y1, double x2, double y2)
     {
-        m_p1 = new Point(x1, y1);
-        m_p2 = new Point(x2, y2);
+        m_p1 = Point.createCartesian(x1, y1);
+        m_p2 = Point.createCartesian(x2, y2);
     }
 
     public Point getPoint1()

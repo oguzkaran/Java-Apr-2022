@@ -1,7 +1,7 @@
 /*------------------------------------------------------------------
 	FILE		: Point.java
 	AUTHOR		: Java-Apr-2022 Group
-	LAST UPDATE	: 08.10.2022
+	LAST UPDATE	: 16.10.2022
 	
 	Point class that represents a 2(two) dimensional point in Cartesian
 	plane
@@ -24,19 +24,36 @@ public class Point {
 		m_y = p.m_y;
 	}
 
-	public Point()	
-	{		
-	}
-	
-	public Point(double x)
+	private Point(double a, double b, boolean polar)
 	{
-		m_x = x;
+		if (polar) {
+			m_x = a * Math.cos(b);
+			m_y = a * Math.sin(a);
+		}
+		else  {
+			m_x = a;
+			m_y = b;
+		}
 	}
-	
-	public Point(double x, double y)
+
+	public static Point createCartesian()
 	{
-		m_x = x;
-		m_y = y;
+		return createCartesian(0);
+	}
+
+	public static Point createCartesian(double x)
+	{
+		return createCartesian(x, 0);
+	}
+
+	public static Point createCartesian(double x, double y)
+	{
+		return new Point(x, y, false);
+	}
+
+	public static Point createPolar(double radius, double theta)
+	{
+		return new Point(radius, theta, true);
 	}
 
 	public double getX()

@@ -1,21 +1,25 @@
 /*----------------------------------------------------------------------------------------------------------------------
-	Sınıf Çalışması: Aşağıda açıklanan sınıfı yazınız
+	Sınıf Çalışması: Daha önce yazmış olduğumuz Point sınıfını aşağıdaki açıklamalara göre tasarlayıp yazınız
 	Açıklamalar:
-		- Sınıfın ismi IntValue olacaktır
-		- Sınıf immutable olarak yazılacaktır
-		- Sınıf int türden bir değeri sarmalayacaktır (wrapper). Yani int türden bir değeri tutacaktır
-		- Sınıf [-128, 127] aralığındaki değerlere ilişkin sarmalanan nesneleri ilk kez istendiğinde yaratacak sonraki
-		isteklerde aynı nesnenin referansını verecektir. Bu kavrama "ön bellek (cache)" denir
-
-	Not: Java'da böyle bır sınıf vardır ve çok sık kullanılır. Burada böyle bir sınıfın nasıl yazılması gerektiğine
-	odaklanmalısınız
------------------------------------------------------------------------------------------------------------------------*/
+		- Point sınıfı immutable olarak yazılacaktır. Ayrıca mutable versiyonu olan MutablePoint sınıfı da yazılacaktır
+		- Point ve MutablePoint sınıfları koordinat bilgilerini "kutupsal (polar)" olarak da alacaktır. Kutupsal koordinatlara
+		ilişkin double türden yarıçap (r) ve double türden theta radyan biriminde açı girişleri için aşağıdaki formüllerle
+		x ve y belirlenebilir:
+				x = r * cos(theta)
+				y = r * sin(theta)
+----------------------------------------------------------------------------------------------------------------------*/
 package org.csystem.app;
+
+import org.csystem.util.math.geometry.Point;
 
 class App {
 	public static void main(String [] args)
 	{
+		Point p = Point.createCartesian(100, 100);
+		Point pp = Point.createPolar(100, 100);
 
+		System.out.println(p.toString());
+		System.out.println(pp.toString());
 	}
 }
 
