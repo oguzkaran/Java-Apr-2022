@@ -38,9 +38,9 @@ public class Fraction {
     {
         if (b == 0) {
             if (a == 0)
-                System.out.println("Indeterminate");
+                System.out.printf("Indeterminate:%d, %d", a, b);
             else
-                System.out.println("Undefined");
+                System.out.printf("Undefined:%d, %d", a, b);
             System.exit(1); //exception handling konusuna kadar sabredin
         }
     }
@@ -103,6 +103,9 @@ public class Fraction {
 
     public void setNumerator(int val)
     {
+        if (m_a == val)
+            return;
+
         set(val, m_b);
     }
 
@@ -113,6 +116,9 @@ public class Fraction {
 
     public void setDenominator(int val)
     {
+        if (m_b == val)
+            return;
+
         check(m_a, val);
         set(m_a, val);
     }
@@ -120,6 +126,21 @@ public class Fraction {
     public double getRealValue()
     {
         return (double)m_a / m_b;
+    }
+
+    public Fraction abs()
+    {
+        return new Fraction(Math.abs(m_a), m_b);
+    }
+
+    public Fraction negate()
+    {
+        return new Fraction(-m_a, m_b);
+    }
+
+    public Fraction pow(int n)
+    {
+        return new Fraction((int)Math.pow(m_a, n), (int)Math.pow(m_b, n));
     }
 
     public Fraction add(Fraction other)

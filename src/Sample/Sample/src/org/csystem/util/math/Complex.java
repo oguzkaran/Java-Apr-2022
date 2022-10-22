@@ -1,9 +1,9 @@
 /*------------------------------------------------------------------
 	FILE		: Complex.java
 	AUTHOR		: Java-Apr-2022 Group
-	LAST UPDATE	: 08.10.2022
+	LAST UPDATE	: 22.10.2022
 	
-	Complex class that represents a complex number
+	Immutable Complex class that represents a complex number
 	
 	Copyleft (c) 1993 by C and System Programmers Association
 	All Rights Free	
@@ -14,36 +14,55 @@ package org.csystem.util.math;
 import static java.lang.Math.sqrt;
 
 public class Complex {
-	private double m_real;
-	private double m_imag;
+	private final double m_real;
+	private final double m_imag;
 	
 	private static Complex add(double re1, double im1, double re2, double im2)
 	{
 		return new Complex(re1 + re2, im1 + im2);
 	}
-	
+
 	private static Complex subtract(double re1, double im1, double re2, double im2)
 	{
 		return add(re1, im1, -re2, -im2);
 	}
-	
+
 	private static Complex multiply(double re1, double im1, double re2, double im2)
 	{
 		return new Complex(re1 * re2 - im1 * im2, re1 * im2 + re2 * im1);
 	}
-	
-	public Complex() 
-	{}
-	
-	public Complex(double real)
+
+	private Complex(double theta)
 	{
-		setReal(real);
+		m_real = Math.cos(theta);
+		m_imag = Math.sin(theta);
 	}
 	
-	public Complex(double real, double imag)
+	private Complex(double real, double imag)
 	{
-		setReal(real);
-		setImag(imag);
+		m_real = real;
+		m_imag = imag;
+	}
+
+	public static Complex create()
+	{
+		return create(0);
+	}
+
+	public static Complex create(double real)
+	{
+		return create(real, 0);
+	}
+
+	public static Complex create(double real, double imag)
+	{
+		return new Complex(real, imag);
+	}
+
+
+	public static Complex createByAngle(double theta)
+	{
+		return new Complex(theta);
 	}
 
 	public double getReal()
@@ -51,15 +70,6 @@ public class Complex {
 		return m_real;
 	}
 
-	public void setReal(double real)
-	{
-		m_real = real;
-	}
-
-	public void setImag(double imag)
-	{
-		m_imag = imag;
-	}
 
 	public double getImag()
 	{
@@ -124,30 +134,10 @@ public class Complex {
 	public Complex multiply(Complex other)
 	{
 		return multiply(m_real, m_imag, other.m_real, other.m_imag);
-	}	
-	
-	public void inc(double value)
-	{
-		m_real += value;
 	}
-	
-	public void inc()
-	{
-		inc(1);
-	}
-	
-	public void dec(double value)
-	{
-		inc(-value);
-	}
-	
-	public void dec()
-	{
-		dec(1);
-	}
-	
+
 	public String toString()
 	{
-		return String.format("(%f, %f)", m_real, m_imag);
+		return ComplexCommon.toString(m_real, m_imag);
 	}
 }
