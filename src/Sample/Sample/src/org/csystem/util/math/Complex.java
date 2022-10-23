@@ -1,7 +1,7 @@
 /*------------------------------------------------------------------
 	FILE		: Complex.java
 	AUTHOR		: Java-Apr-2022 Group
-	LAST UPDATE	: 22.10.2022
+	LAST UPDATE	: 23.10.2022
 	
 	Immutable Complex class that represents a complex number
 	
@@ -134,6 +134,12 @@ public class Complex {
 	public Complex multiply(Complex other)
 	{
 		return multiply(m_real, m_imag, other.m_real, other.m_imag);
+	}
+
+
+	public MutableComplex toMutableComplex()
+	{
+		return MutableComplex.create(m_real, m_imag);
 	}
 
 	public String toString()
