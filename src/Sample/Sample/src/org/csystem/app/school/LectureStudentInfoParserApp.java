@@ -43,8 +43,8 @@ public class LectureStudentInfoParserApp {
         System.out.println("--------------------------------------------------");
         System.out.printf("Adı Soyadı: %s%n", info.getStudentName());
         System.out.printf("Ders Adı: %s%n", info.getLectureName());
-        System.out.printf("Arasınav Tarihi: %s%n", info.getMidtermDate());
-        System.out.printf("Final Tarihi: %s%n", info.getFinalDate());
+        System.out.printf("Arasınav Tarihi: %s%n", info.getMidtermDate().toLongDateStringTR());
+        System.out.printf("Final Tarihi: %s%n", info.getFinalDate().toLongDateStringTR());
         System.out.printf("Arasınav Notu: %d%n", info.getMidTermGrade());
         System.out.printf("Final Notu: %d%n", info.getFinalGrade());
         System.out.printf("Geçme Notu: %d%n", grade);

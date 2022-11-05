@@ -1,7 +1,7 @@
 /*------------------------------------------------------------------
 	FILE		: DayOfWeek.java
 	AUTHOR		: Java-Apr-2022 Group
-	LAST UPDATE	: 23.10.2022
+	LAST UPDATE	: 05.11.2022
 
 	enum class for day of weeks
 
