@@ -13,12 +13,6 @@ package org.csystem.util.datetime;
 import java.time.LocalDate;
 
 public class Date {
-    private static final String [] MONTHS_TR = {"", "Ocak", "Şubat", "Mart", "Nisan", "Mayıs", "Haziran",
-            "Temmuz", "Ağustos", "Eylül", "Ekim", "Kasım", "Aralık"};
-    private static final String [] MONTHS_EN = {"", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"};
-    private static final String [] DAY_OF_WEEKS_TR = {"Pazar", "Pazartesi", "Salı", "Çarşamba", "Perşembe", "Cuma", "Cumartesi"};
-    private static final String [] DAY_OF_WEEKS_EN = {"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"};
-
     private int m_day, m_month, m_year;
     private int m_dayOfWeek;
 
@@ -175,12 +169,12 @@ public class Date {
 
     public String getDayOfWeekEN()
     {
-        return DAY_OF_WEEKS_EN[m_dayOfWeek];
+        return DateUtil.DAY_OF_WEEKS_EN[m_dayOfWeek];
     }
 
     public String getDayOfWeekTR()
     {
-        return DAY_OF_WEEKS_TR[m_dayOfWeek];
+        return DateUtil.DAY_OF_WEEKS_TR[m_dayOfWeek];
     }
 
     public boolean isLeapYear()
@@ -220,11 +214,11 @@ public class Date {
 
     public String toShortDateStringTR()
     {
-        return String.format("%d %s %d", m_day, MONTHS_TR[m_month], m_year);
+        return String.format("%d %s %d", m_day, DateUtil.MONTHS_TR[m_month], m_year);
     }
 
     public String toShortDateStringEN()
     {
-        return String.format("%d%s %s %d", m_day, getDaySuffix(m_day), MONTHS_EN[m_month], m_year);
+        return String.format("%d%s %s %d", m_day, getDaySuffix(m_day), DateUtil.MONTHS_EN[m_month], m_year);
     }
 }

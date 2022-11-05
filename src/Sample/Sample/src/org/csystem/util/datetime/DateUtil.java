@@ -13,12 +13,20 @@ package org.csystem.util.datetime;
 import java.util.Random;
 
 public class DateUtil {
+	static final String [] MONTHS_TR = {"", "Ocak", "Şubat", "Mart", "Nisan", "Mayıs", "Haziran",
+			"Temmuz", "Ağustos", "Eylül", "Ekim", "Kasım", "Aralık"};
+	static final String [] MONTHS_EN = {"", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"};
+	static final String [] DAY_OF_WEEKS_TR = {"Pazar", "Pazartesi", "Salı", "Çarşamba", "Perşembe", "Cuma", "Cumartesi"};
+	static final String [] DAY_OF_WEEKS_EN = {"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"};
+
+	static final DayOfWeek [] DAY_OF_WEEKS = DayOfWeek.values();
+	static final Month [] MONTHS = Month.values();
+
+
 	private DateUtil()
 	{
 	}
 
-	static final DayOfWeek [] DAY_OF_WEEKS = DayOfWeek.values();
-	static final Month [] MONTHS = Month.values();
 
 	public static Date randomDate()
 	{
