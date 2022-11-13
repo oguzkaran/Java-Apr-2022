@@ -25,6 +25,16 @@ public class Time {
         m_millisecond = now.getNano() / 1_000_000;
     }
 
+    public Time(int hour, int minute)
+    {
+        this(hour, minute, 0);
+    }
+
+    public Time(int hour, int minute, int second)
+    {
+        this(hour, minute, second, 0);
+    }
+
     public Time(int hour, int minute, int second, int millisecond)
     {
         //TODO:

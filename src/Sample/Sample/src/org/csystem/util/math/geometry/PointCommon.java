@@ -1,7 +1,7 @@
 /*------------------------------------------------------------------
 	FILE		: PointCommon.java
 	AUTHOR		: Java-Apr-2022 Group
-	LAST UPDATE	: 16.10.2022
+	LAST UPDATE	: 13.11.2022
 
 	Friendly PointCommon class for Point and MutablePoint
 
@@ -16,7 +16,7 @@ class PointCommon {
     private PointCommon()
     {}
 
-    public static double distance(double x1, double y1, double x2, double y2)
+    static double distance(double x1, double y1, double x2, double y2)
     {
         return sqrt(pow(x1 - x2, 2) + pow(y1 - y2, 2));
     }

@@ -3,7 +3,7 @@
 	AUTHOR		: Java-Apr-2022 Group
 	LAST UPDATE	: 08.10.2022
 
-	Circle class that represents a circle
+	Circle class that represents a circle in synthetic geometry
 
 	Copyleft (c) 1993 by C and System Programmers Association
 	All Rights Free

@@ -1,7 +1,7 @@
 /*------------------------------------------------------------------
 	FILE		: Date.java
 	AUTHOR		: Java-Apr-2022 Group
-	LAST UPDATE	: 05.11.2022
+	LAST UPDATE	: 13.11.2022
 
 	Date class that represents a date
 
@@ -106,8 +106,7 @@ public class Date {
 
     public Date(int day, Month month, int year)
     {
-        checkDate(day, month.ordinal() + 1, year, String.format("Invalid date value(s) -> day: %d, year: %d", day, year));
-        set(day, month.ordinal() + 1, year);
+        this(day, month.ordinal() + 1, year);
     }
 
     public int getDay()
