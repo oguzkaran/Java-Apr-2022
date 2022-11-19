@@ -58,6 +58,10 @@ public class Lotto {
     {
         m_random = random;
     }
+    public Lotto()
+    {
+        this(new Random());
+    }
 
     public boolean isWinGame1()
     {
