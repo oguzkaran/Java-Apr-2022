@@ -1,7 +1,7 @@
 /*------------------------------------------------------------------
 	FILE		: AnalyticalCircle.java
 	AUTHOR		: Java-Apr-2022 Group
-	LAST UPDATE	: 13.11.2022
+	LAST UPDATE	: 19.11.2022
 
 	AnalyticalCircle class that represents a circle in Cartesian
 	plane
@@ -74,9 +74,12 @@ public class AnalyticalCircle extends Circle {
 
     public boolean isTangent(AnalyticalCircle other)
     {
-        //TODO:
-        return true;
+        return Math.abs(getRadius() + other.getRadius() - centerDistance(other)) < DELTA;
     }
 
+    public String toString()
+    {
+        return String.format("%s, x: %f, y: %f", super.toString(), m_center.getX(), m_center.getY());
+    }
     //...
 }
