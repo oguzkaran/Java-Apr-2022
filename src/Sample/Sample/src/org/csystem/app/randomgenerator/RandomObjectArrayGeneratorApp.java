@@ -4,7 +4,6 @@ import org.csystem.util.array.ArrayUtil;
 import org.csystem.util.datetime.Date;
 import org.csystem.util.datetime.Time;
 import org.csystem.util.generator.random.RandomObjectArrayGenerator;
-import org.csystem.util.wrapper.IntValue;
 
 import java.util.Random;
 import java.util.Scanner;
@@ -25,10 +24,15 @@ public class RandomObjectArrayGeneratorApp {
                 System.out.println(time.toLongTimeString());
             else if (object instanceof int[] a)
                 ArrayUtil.print(2, a);
-            else if (object instanceof IntValue value) {
-                int val = value.getValue();
+            else if (object instanceof Integer) {
+                int val = (int)object;
 
                 System.out.println(val * val);
+            }
+            else if (object instanceof Character) {
+                char ch = (char)object;
+
+                System.out.printf("ch = %c%n", ch);
             }
             System.out.println("---------------------------------------------------------");
         }
