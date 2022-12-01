@@ -1,7 +1,7 @@
 /*------------------------------------------------------------------
 	FILE		: ArrayUtil.java
 	AUTHOR		: Java-Apr-2022 Group
-	LAST UPDATE	: 08.10.2022
+	LAST UPDATE	: 01.12.2022
 
 	Utility ArrayUtil class for array operations
 
@@ -14,7 +14,7 @@ import java.util.Random;
 
 import static java.lang.Math.floor;
 
-public class ArrayUtil {
+public final class ArrayUtil {
 
     private ArrayUtil()
     {}

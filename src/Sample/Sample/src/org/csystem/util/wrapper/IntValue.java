@@ -1,7 +1,7 @@
 /*------------------------------------------------------------------
 	FILE		: IntValue.java
 	AUTHOR		: Java-Apr-2022 Group
-	LAST UPDATE	: 16.10.2022
+	LAST UPDATE	: 01.12.2022
 
     IntValue class that wraps an int value
 
@@ -10,7 +10,7 @@
 ------------------------------------------------------------------ */
 package org.csystem.util.wrapper;
 
-public class IntValue {
+public final class IntValue {
     private static final int CACHE_MIN = -128;
     private static final int CACHE_MAX = 127;
     private static final IntValue [] CACHE = new IntValue[CACHE_MAX - CACHE_MIN + 1];

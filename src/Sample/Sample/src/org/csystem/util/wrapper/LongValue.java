@@ -1,7 +1,7 @@
 /*------------------------------------------------------------------
 	FILE		: LongValue.java
 	AUTHOR		: Java-Apr-2022 Group
-	LAST UPDATE	: 16.10.2022
+	LAST UPDATE	: 01.12.2022
 
 	LongValue class that wraps a long value
 
@@ -10,7 +10,7 @@
 ------------------------------------------------------------------ */
 package org.csystem.util.wrapper;
 
-public class LongValue {
+public final class LongValue {
     private static final int CACHE_MIN = -128;
     private static final int CACHE_MAX = 127;
     private static final LongValue[] CACHE = new LongValue[CACHE_MAX - CACHE_MIN + 1];
