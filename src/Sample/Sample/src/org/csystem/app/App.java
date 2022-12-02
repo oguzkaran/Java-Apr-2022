@@ -1,29 +1,38 @@
 /*-----------------------------------------------------------------------------------------------------------------------
-    Biz gerekmedikçe veri elemanları için this referansını kullanmayacağız. Ancak bazı programcılar metot çağrılarında
-    okunabilirlik açısından this referansını kullanırlar. Çüğnkü non-static bir metodu this ile çağırmak static bir metot
-    çağrısının okunabilirliğini yani onun static bir metot olduğunun anlaşılmasını sağlar
+
 -----------------------------------------------------------------------------------------------------------------------*/
 package org.csystem.app;
+
+import org.csystem.util.wrapper.MutableIntValue;
+
+import java.util.Scanner;
 
 class App {
     public static void main(String [] args)
     {
-        Sample s = new Sample();
+        Scanner kb = new Scanner(System.in);
+        System.out.print("Bir sayı giriniz:");
+        int val = kb.nextInt();
 
-        s.setA(20);
-        s.print();
+        if (val < 1 || val > 3) {
+            System.out.println("Geçersiz değer!...");
+            System.exit(1);
+        }
+
+        MutableIntValue mutableIntValue = null;
+
+        switch (val) {
+            case 1 -> mutableIntValue = new MutableIntValue(-128);
+            case 2 -> mutableIntValue = new MutableIntValue(0);
+            case 3 -> mutableIntValue = new MutableIntValue(127);
+        }
+
+        System.out.printf("Value:%d%n", mutableIntValue.getValue());
     }
 }
 
-class Point {
-    private int x;
-    private int y;
-
-    public Point(int x, int y)
-    {
-        this.x = x;
-        this.y = y;
-    }
+class Sample {
+    public int x;
 
     //...
 }
