@@ -1,38 +1,27 @@
 /*-----------------------------------------------------------------------------------------------------------------------
-
+    Dinamik büyüyen dizi (dynamic array) veri yapıları diziyi eklenen eleman sayısı kadar büyütmez. Dizinin büyütülmesi
+    gerektiği durumda büyütme işlemini biraz fazlaca yazar. İşte bu tarz veri yapıllarında dizinin gerçek uzunluğuna
+    "capacity" değeri denir. Dizide mantıksal olarak tutulan elemanların sayısına "size/count" denir. size hiçbir zaman
+    "capacity" değerinden büyü olamaz. "Capacity" değerim "size" değerie eşit veya size değerinden büyük olabilir
 -----------------------------------------------------------------------------------------------------------------------*/
 package org.csystem.app;
 
-import org.csystem.util.wrapper.MutableIntValue;
+import org.csystem.util.array.ArrayUtil;
 
-import java.util.Scanner;
+import java.util.Random;
 
 class App {
     public static void main(String [] args)
     {
-        Scanner kb = new Scanner(System.in);
-        System.out.print("Bir sayı giriniz:");
-        int val = kb.nextInt();
+        Random r = new Random();
+        int [] a = ArrayUtil.getRandomArray(r, 10, 0, 100);
 
-        if (val < 1 || val > 3) {
-            System.out.println("Geçersiz değer!...");
-            System.exit(1);
-        }
+        ArrayUtil.print(2, a);
 
-        MutableIntValue mutableIntValue = null;
+        a = ArrayUtil.copyOf(a, a.length * 2);
 
-        switch (val) {
-            case 1 -> mutableIntValue = new MutableIntValue(-128);
-            case 2 -> mutableIntValue = new MutableIntValue(0);
-            case 3 -> mutableIntValue = new MutableIntValue(127);
-        }
-
-        System.out.printf("Value:%d%n", mutableIntValue.getValue());
+        ArrayUtil.print(2, a);
     }
 }
 
-class Sample {
-    public int x;
 
-    //...
-}
