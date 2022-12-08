@@ -1,26 +1,26 @@
 /*-----------------------------------------------------------------------------------------------------------------------
-    Dinamik büyüyen dizi (dynamic array) veri yapıları diziyi eklenen eleman sayısı kadar büyütmez. Dizinin büyütülmesi
-    gerektiği durumda büyütme işlemini biraz fazlaca yazar. İşte bu tarz veri yapıllarında dizinin gerçek uzunluğuna
-    "capacity" değeri denir. Dizide mantıksal olarak tutulan elemanların sayısına "size/count" denir. size hiçbir zaman
-    "capacity" değerinden büyü olamaz. "Capacity" değerim "size" değerie eşit veya size değerinden büyük olabilir
+    ArrayList sınıfı for-each döngü deyimi ile dolaşılabilir (iterable) bir sınıftır. for-each döngü deyiminin her adımında
+    içeride tutulan elemanlar sırasıyla elde edilir
 -----------------------------------------------------------------------------------------------------------------------*/
 package org.csystem.app;
 
-import org.csystem.util.array.ArrayUtil;
-
-import java.util.Random;
+import java.util.ArrayList;
 
 class App {
-    public static void main(String [] args)
+    public static void main(String[] args)
     {
-        Random r = new Random();
-        int [] a = ArrayUtil.getRandomArray(r, 10, 0, 100);
+        ArrayList numbers = new ArrayList();
 
-        ArrayUtil.print(2, a);
+        for (int i = 0; i < 21; ++i)
+            numbers.add(i * 10);
 
-        a = ArrayUtil.copyOf(a, a.length * 2);
+        for (Object o : numbers) {
+            int val = (int) o;
 
-        ArrayUtil.print(2, a);
+            System.out.printf("%d ", val);
+        }
+
+        System.out.println();
     }
 }
 
