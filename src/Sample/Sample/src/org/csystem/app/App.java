@@ -1,27 +1,49 @@
 /*-----------------------------------------------------------------------------------------------------------------------
-    ArrayList sınıfı for-each döngü deyimi ile dolaşılabilir (iterable) bir sınıftır. for-each döngü deyiminin her adımında
-    içeride tutulan elemanlar sırasıyla elde edilir
+    ArrayList/Vector sınıfının ensureCapacity metodu capacity değerini aşağıdaki şekilde belirler (else if biçiminde
+    değerlendiriniz):
+    - Yeni capacity değeri var olan capacity değerinden küçük veya eşit ise değişiklik yapmaz
+
+    - Yeni capacity değeri var olan capacity değerinin artması gereken miktardan küçük veya eşitse artması gereken değere
+    çeker
+
+    - Yeni capacity değeri var olan capacity değerinin artması değerinden büyük verilen capacity değerine çeker
 -----------------------------------------------------------------------------------------------------------------------*/
 package org.csystem.app;
 
-import java.util.ArrayList;
+import org.csystem.util.string.StringUtil;
+
+import java.util.Random;
+import java.util.Scanner;
+import java.util.Vector;
 
 class App {
     public static void main(String[] args)
     {
-        ArrayList numbers = new ArrayList();
+        Random r = new Random();
+        Vector passwords = new Vector();
 
-        for (int i = 0; i < 21; ++i)
-            numbers.add(i * 10);
+        for (int i = 0; i < 12; ++i)
+            passwords.add(StringUtil.getRandomTextTR(r, r.nextInt(5, 11)));
 
-        for (Object o : numbers) {
-            int val = (int) o;
+        System.out.printf("Capacity:%d%n", passwords.capacity());
+        System.out.printf("Size:%d%n", passwords.size());
+        System.out.println("-------------------------------------------------");
 
-            System.out.printf("%d ", val);
-        }
 
-        System.out.println();
+        passwords.ensureCapacity(17);
+        System.out.printf("Capacity:%d%n", passwords.capacity());
+        System.out.printf("Size:%d%n", passwords.size());
+        System.out.println("-------------------------------------------------");
+
+        passwords.ensureCapacity(37);
+        System.out.printf("Capacity:%d%n", passwords.capacity());
+        System.out.printf("Size:%d%n", passwords.size());
+        System.out.println("-------------------------------------------------");
+
+        passwords.ensureCapacity(90);
+        System.out.printf("Capacity:%d%n", passwords.capacity());
+        System.out.printf("Size:%d%n", passwords.size());
+        System.out.println("-------------------------------------------------");
     }
 }
-
 
