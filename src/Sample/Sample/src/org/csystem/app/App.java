@@ -1,49 +1,51 @@
 /*-----------------------------------------------------------------------------------------------------------------------
-    ArrayList/Vector sınıfının ensureCapacity metodu capacity değerini aşağıdaki şekilde belirler (else if biçiminde
-    değerlendiriniz):
-    - Yeni capacity değeri var olan capacity değerinden küçük veya eşit ise değişiklik yapmaz
+    Polymorphism (çok biçimlilik): Biyoloji'de çok biçimlilik şu şekilde tanımlanabilir: "Farklı doku ya da organların
+    evrim süreci içerisinde temel işlevleri aynı kalmak koşuluyla, bu işlevi yerine getirme biçiminin değişebilmesidir".
+    Örneğin görme davranışı birbirfin türemiş veya aynı sınıftan farklı koldan türetilerek gelmiş canlılar arasında farklılık
+    gösterebilmektedir. Ancak görev "görmektir".
 
-    - Yeni capacity değeri var olan capacity değerinin artması gereken miktardan küçük veya eşitse artması gereken değere
-    çeker
 
-    - Yeni capacity değeri var olan capacity değerinin artması değerinden büyük verilen capacity değerine çeker
 -----------------------------------------------------------------------------------------------------------------------*/
 package org.csystem.app;
 
-import org.csystem.util.string.StringUtil;
+import org.csystem.util.collection.CSDArrayList;
 
-import java.util.Random;
 import java.util.Scanner;
-import java.util.Vector;
 
 class App {
     public static void main(String[] args)
     {
-        Random r = new Random();
-        Vector passwords = new Vector();
+        Scanner kb = new Scanner(System.in);
+        CSDArrayList numbers = new CSDArrayList();
 
-        for (int i = 0; i < 12; ++i)
-            passwords.add(StringUtil.getRandomTextTR(r, r.nextInt(5, 11)));
+        System.out.print("Bir sayı giriniz:");
+        int count = kb.nextInt();
 
-        System.out.printf("Capacity:%d%n", passwords.capacity());
-        System.out.printf("Size:%d%n", passwords.size());
-        System.out.println("-------------------------------------------------");
+        for (int i = 0; i < count; ++i)
+            numbers.add(i * 10);
 
+        int size = numbers.size();
 
-        passwords.ensureCapacity(17);
-        System.out.printf("Capacity:%d%n", passwords.capacity());
-        System.out.printf("Size:%d%n", passwords.size());
-        System.out.println("-------------------------------------------------");
+        for (int i = 0; i < size; ++i) {
+            int val = (int)numbers.get(i);
 
-        passwords.ensureCapacity(37);
-        System.out.printf("Capacity:%d%n", passwords.capacity());
-        System.out.printf("Size:%d%n", passwords.size());
-        System.out.println("-------------------------------------------------");
+            System.out.printf("%02d ", val);
+        }
 
-        passwords.ensureCapacity(90);
-        System.out.printf("Capacity:%d%n", passwords.capacity());
-        System.out.printf("Size:%d%n", passwords.size());
-        System.out.println("-------------------------------------------------");
+        System.out.println();
+
+        int oldValue = (int)numbers.set(3, 78);
+
+        size = numbers.size();
+
+        for (int i = 0; i < size; ++i) {
+            int val = (int)numbers.get(i);
+
+            System.out.printf("%02d ", val);
+        }
+
+        System.out.println();
+
+        System.out.printf("Eski değer:%d%n", oldValue);
     }
 }
-
