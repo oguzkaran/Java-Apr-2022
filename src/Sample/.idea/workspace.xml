@@ -4,7 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8f5bc2b5-70ee-4304-8ef9-4a9aee8e2f7b" name="Changes" comment="" />
+    <list default="true" id="8f5bc2b5-70ee-4304-8ef9-4a9aee8e2f7b" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../doc/Examples.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../doc/Examples.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sample/src/org/csystem/app/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/Sample/src/org/csystem/app/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sample/src/org/csystem/app/company/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/Sample/src/org/csystem/app/company/Employee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sample/src/org/csystem/app/company/HumanResources.java" beforeDir="false" afterPath="$PROJECT_DIR$/Sample/src/org/csystem/app/company/HumanResources.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sample/src/org/csystem/app/company/Manager.java" beforeDir="false" afterPath="$PROJECT_DIR$/Sample/src/org/csystem/app/company/Manager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sample/src/org/csystem/app/company/ProjectWorker.java" beforeDir="false" afterPath="$PROJECT_DIR$/Sample/src/org/csystem/app/company/ProjectWorker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sample/src/org/csystem/app/company/SalesManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/Sample/src/org/csystem/app/company/SalesManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sample/src/org/csystem/app/company/Worker.java" beforeDir="false" afterPath="$PROJECT_DIR$/Sample/src/org/csystem/app/company/Worker.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
