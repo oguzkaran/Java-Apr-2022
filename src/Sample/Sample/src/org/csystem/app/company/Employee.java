@@ -7,7 +7,6 @@ public class Employee {
 
     //...
 
-
     public String getCitizenId()
     {
         return m_citizenId;
