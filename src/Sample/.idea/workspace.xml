@@ -9,11 +9,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Sample/src/org/csystem/app/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/Sample/src/org/csystem/app/App.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Sample/src/org/csystem/app/company/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/Sample/src/org/csystem/app/company/Employee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sample/src/org/csystem/app/company/HumanResources.java" beforeDir="false" afterPath="$PROJECT_DIR$/Sample/src/org/csystem/app/company/HumanResources.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sample/src/org/csystem/app/company/Manager.java" beforeDir="false" afterPath="$PROJECT_DIR$/Sample/src/org/csystem/app/company/Manager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sample/src/org/csystem/app/company/ProjectWorker.java" beforeDir="false" afterPath="$PROJECT_DIR$/Sample/src/org/csystem/app/company/ProjectWorker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sample/src/org/csystem/app/company/SalesManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/Sample/src/org/csystem/app/company/SalesManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sample/src/org/csystem/app/company/Worker.java" beforeDir="false" afterPath="$PROJECT_DIR$/Sample/src/org/csystem/app/company/Worker.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
