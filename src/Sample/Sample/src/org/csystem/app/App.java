@@ -1,79 +1,60 @@
 /*-----------------------------------------------------------------------------------------------------------------------
-    Aşağıdaki örnekte run metodu NaNException fırlatıldığında onu yakalamış ve aynı nesneyi yeniden fırlatmıştır. Bu işleme
-    "rethrow" denir. Örnekte run metodu müşteri kodlar açısından NaNExcption da fırlatabilir durumdadır. Bu run metodunun
-    dökumanlarına yazılır. run metodunu yazan programcı açısından ise NanException ham ilgili try bloğunda işlenmiş (handling).
-    hem de aynı exceptiıon nesnesi müşteri koda fırlatılmış olur
+    Aşağıdaki örnekte return edilmeden önce try yazısı ekleneceğinden çıktı footryfinally biçiminde olur. Örnekte durumun
+    anlaşılması içinn MutableString sınıfı yazılmıltır. Sınıf daha iyi yazılabilir. Sadece konuya odaklanınız
 -----------------------------------------------------------------------------------------------------------------------*/
 package org.csystem.app;
-
-import java.util.InputMismatchException;
-import java.util.Scanner;
 
 class App {
     public static void main(String[] args)
     {
-        try {
-            Application.run();
-            //...
-        }
-        catch (InfinityException ignore) {
-            System.out.println("Undefined");
-        }
-        catch (NaNException ignore) {
-            System.out.println("main:Indeterminate");
-        }
-        catch (InputMismatchException ignore) {
-            System.out.println("Input mismatch");
-        }
-
-        System.out.println("Tekrar yapıyor musunuz?");
+        System.out.println(Sample.foo("foo")); //footryfinally
     }
 }
 
-class Application {
-    public static void run()
+class Sample {
+    public static MutableString foo(String str)
     {
+        MutableString result = new MutableString(str);
+
         try {
-            Scanner kb = new Scanner(System.in);
-
-            System.out.print("Bir sayı giriniz:");
-            double val = kb.nextDouble();
-
-            System.out.printf("log(%.2f) = %f%n", val, MathUtil.log(val));
+            return result.append("try");
         }
-        catch (NaNException ex) {
-            System.out.println("Indeterminate");
-            throw ex; //rethrow
+        finally {
+            result.append("finally");
         }
-
-        System.out.println("run sonu!...");
     }
 }
 
-class MathUtil {
-    public static double log(double a)
+class MutableString {
+    private String m_str;
+
+    public MutableString(String str)
     {
-        if (a == 0)
-            throw new InfinityException();
-
-        if (a < 0)
-            throw new NaNException();
-
-        return Math.log(a);
+        m_str = str;
     }
-}
 
+    public void setStr(String str)
+    {
+        m_str = str;
+    }
 
-class InfinityException extends MathException {
+    public String getStr()
+    {
+        return m_str;
+    }
 
-}
+    public MutableString append(String str)
+    {
+        m_str += str;
 
-class NaNException extends MathException {
+        return this;
+    }
 
-}
+    //...
 
-
-class MathException extends RuntimeException {
-
+    public String toString()
+    {
+        return m_str;
+    }
 }
 
