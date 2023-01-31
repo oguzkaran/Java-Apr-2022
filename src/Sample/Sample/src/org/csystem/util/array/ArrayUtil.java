@@ -15,7 +15,6 @@ import java.util.Random;
 import static java.lang.Math.floor;
 
 public final class ArrayUtil {
-
     private ArrayUtil()
     {}
 
