@@ -20,13 +20,13 @@ public class CSDArrayList {
     private static void doForIllegalArgumentException(String message)
     {
         System.out.println(message);
-        System.exit(1); //Exception işlemlerine sabredin
+        System.exit(1); //Exception işlemlerine kadar sabredin
     }
 
     private static void doForIndexOutOfBoundsException(String message)
     {
         System.out.println(message);
-        System.exit(1); //Exception işlemlerine sabredin
+        System.exit(1); //Exception işlemlerine kadar sabredin
     }
 
     public void checkIndex(int index)
