@@ -53,6 +53,9 @@ public class NumericLottery {
 
     public int [][] getNumbers(int count)
     {
+        if (count <= 0)
+            throw new IllegalArgumentException("Invalid count value!...");
+
         int [][] numbers = new int[count][];
 
         for (int i = 0; i < count; ++i)

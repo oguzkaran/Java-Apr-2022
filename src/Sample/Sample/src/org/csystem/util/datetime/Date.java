@@ -56,10 +56,9 @@ public class Date {
         return month == 2 && Month.isLeapYear(year) ? 29 : DateUtil.MONTHS[month - 1].getDaysByYear(year);
     }
 
-    private static void doWorkForInvalidData(String msg)
+    private static void doWorkForInvalidData(String message)
     {
-        System.out.println(msg);
-        System.exit(1); //Exception işlemleri konusuna kadar sabredin
+        throw new DateTimeException(message);
     }
 
     private static void checkDate(int day, int month, int year, String message)

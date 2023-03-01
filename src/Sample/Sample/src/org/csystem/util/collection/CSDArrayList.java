@@ -1,7 +1,7 @@
 /*------------------------------------------------------------------
 	FILE		: CSDArrayList.java
 	AUTHOR		: Java-Apr-2022 Group
-	LAST UPDATE	: 29.12.2022
+	LAST UPDATE	: 01.03.2023
 
 	CSDArrayList class that represents dynamic array
 
@@ -19,14 +19,12 @@ public class CSDArrayList {
 
     private static void doForIllegalArgumentException(String message)
     {
-        System.out.println(message);
-        System.exit(1); //Exception işlemlerine kadar sabredin
+        throw new IllegalArgumentException(message);
     }
 
     private static void doForIndexOutOfBoundsException(String message)
     {
-        System.out.println(message);
-        System.exit(1); //Exception işlemlerine kadar sabredin
+        throw new IndexOutOfBoundsException(message);
     }
 
     public void checkIndex(int index)

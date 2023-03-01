@@ -46,6 +46,9 @@ public class BallFall {
 
 	public void play(int width, int height)
 	{
+		if (width <= 0 || height <= 0)
+			throw new IllegalArgumentException("Invalid values!...");
+
 		int ballIndex = 0;
 		boolean isRight = false;
 		

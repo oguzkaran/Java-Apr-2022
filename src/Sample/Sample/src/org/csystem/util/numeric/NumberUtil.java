@@ -326,6 +326,11 @@ public final class NumberUtil {
 		}
 	}
 
+	public static String numToTextTR(long val)
+	{
+		throw new UnsupportedOperationException("TODO:");
+	}
+
 	public static void printCollatz(int n)
 	{
 		if (n <= 0) {

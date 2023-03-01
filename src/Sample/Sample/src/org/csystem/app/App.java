@@ -1,28 +1,12 @@
 /*-----------------------------------------------------------------------------------------------------------------------
-    JavaSE'de bulunan önemli bazı exception sınıfları:
-    ClassCastException: Downcasting işleminde haksız dönüşüm olduğunda ClassCastException nesnesi fırlatılır. Haksız dönşüm
-    kontrolü için bu exception handle edilebilir. Ancak bunun yerine instanceof operatörü kullanımı tavsiye edilir.
+    Arayüzler (Interfaces):
+    Anımsanacağı gibi Java'da sınıf ve enum sınıfı bildirimi bir tür bildirimidir (user defined types). Bir arayüz de
+    tür bildirimidir. Java'da arayüzler interface anahtar sözcüğü ile bildirilirler. Arayüz isimlerini "I" ile başlatacağız.
+    Ancak Java'da bulunan standart arayüzler bu şekilde isimlendirilmemiştir. Arayüzler daha çok abstract sınıflara
+    benzese de farklı bir çok özelliği de bulunmaktadır
 
-    IllegalArgumentException: Bir metodun parametresinin geçersizliği durumunda fırlatılan exception sınıfıdır. Konuya
-    özgü olarak bu sınıftan türemiş exception sınıfları bulunmaktadır.
-
-    NumberFormatException: IllegalArgumentException sınıfından türetilmiştir. Sarmalayan sınıfların parseXXX metotları
-    (Boolean sınıfı hariç) yazıyı ilgili türe çeviremelerse bu exception sınıfını fırlatırlar.
-
-    InputMismatchException: Bu sınıf bir girdinin geçersiz olduğu durumlarda fırlatılır. Scanner sınıfının çeşitli
-    metotları bu exception'ı fırlatmaktadır
-
-    IndexOutOfBoundsException: Bu exception sınıfı indeks taşmalarında kullanılır. Örneğin ArrayList sınıfının bazı
-    metotları bu exception sınıfını fırlatırlar.
-
-    ArrayIndexOutOfBoundsException: Bu exception sınıfı özel olarak dizinin indeks numarasının geçersiz olduğu
-    durumlarda kullanılır.
-
-    NullPointerException: Bir referansın null değeri tutması durumunda o referans ile işlem yapılmaya çalışıldığında
-    fırlatılır. Bu exception sınıfının programlamada handle edilmesi tavsiye edilmez. Genel olarak bu durumun oluşabileceği
-    kod parçaları yazılmamalıdır ya da yazılmışsa düzeltilmelidir
-
-    Anahtar Notlar: Yukarıdakilerin dışında bir çok yararlı exception sınıfı JavaSE'de bulunmaktadır
+    Arayüzlere, zaman içerisinde özelliklle Java 8 ile birlikte sentaks ve semantik olarak bir çok eklenti yapılmıştır.
+    Bunlar konu içerisinde ele alınacaktır
 -----------------------------------------------------------------------------------------------------------------------*/
 package org.csystem.app;
 
@@ -33,59 +17,7 @@ class App {
     }
 }
 
-class Sample {
-    public static void bar() throws TheirException
-    {
-        //...
-    }
-}
-
-class E extends A {
-    public void foo() throws TheirException
-    {
-        Sample.bar();
-        //...
-    }
-}
-
-class D extends A {
-    public void foo() throws OurException
-    {
-        //...
-    }
-}
-
-class C extends A {
-    public void foo() throws MyException
-    {
-        //...
-    }
-}
-
-class B extends A {
-    public void foo()
-    {
-        //...
-    }
-}
-
-abstract class A {
-    public abstract void foo() throws Exception;
+interface IX {
     //...
 }
 
-class MyException extends Exception {
-    //...
-}
-
-class YourException extends Exception {
-    //...
-}
-
-class OurException extends MyException {
-    //...
-}
-
-class TheirException extends Exception {
-    //...
-}

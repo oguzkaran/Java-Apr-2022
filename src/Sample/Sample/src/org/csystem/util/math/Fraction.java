@@ -1,7 +1,7 @@
 /*------------------------------------------------------------------
 	FILE		: Fraction.java
 	AUTHOR		: Java-Apr-2022 Group
-	LAST UPDATE	: 22.10.2022
+	LAST UPDATE	: 01.03.2023
 
 	Fraction class that represents a fraction in mathematics
 
@@ -38,10 +38,9 @@ public class Fraction {
     {
         if (b == 0) {
             if (a == 0)
-                System.out.printf("Indeterminate:%d, %d", a, b);
-            else
-                System.out.printf("Undefined:%d, %d", a, b);
-            System.exit(1); //exception handling konusuna kadar sabredin
+                throw new MathException(String.format("Indeterminate:%d, %d", a, b), MathExceptionStatus.INDETERMINATE);
+
+            throw new MathException(String.format("Undefined:%d, %d", a, b), MathExceptionStatus.UNDEFINED);
         }
     }
 
