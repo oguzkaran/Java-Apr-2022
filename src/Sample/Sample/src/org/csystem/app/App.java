@@ -1,23 +1,30 @@
 /*-----------------------------------------------------------------------------------------------------------------------
-    Arayüzler (Interfaces):
-    Anımsanacağı gibi Java'da sınıf ve enum sınıfı bildirimi bir tür bildirimidir (user defined types). Bir arayüz de
-    tür bildirimidir. Java'da arayüzler interface anahtar sözcüğü ile bildirilirler. Arayüz isimlerini "I" ile başlatacağız.
-    Ancak Java'da bulunan standart arayüzler bu şekilde isimlendirilmemiştir. Arayüzler daha çok abstract sınıflara
-    benzese de farklı bir çok özelliği de bulunmaktadır
-
-    Arayüzlere, zaman içerisinde özelliklle Java 8 ile birlikte sentaks ve semantik olarak bir çok eklenti yapılmıştır.
-    Bunlar konu içerisinde ele alınacaktır
+    Java 9 ile birlikte arayüzler içerisinde private metotlar yazılabilir. Şüphesiz bu metotların gövdeleri olmalıdır.
+    Yani abstract olamazlar. private metotlar için default anahtar sözcüğü kullanılamaz
 -----------------------------------------------------------------------------------------------------------------------*/
 package org.csystem.app;
+
+import org.csystem.util.console.Console;
 
 class App {
     public static void main(String[] args)
     {
-
+        Util.print(Integer::sum, 10, 20);
+        Util.print((a, b) -> a * b, 10, 20);
+        Util.print((a, b) -> 2 * a + b, 10, 20);
     }
 }
 
-interface IX {
-    //...
+class Util {
+    public static void print(IIntBinaryOperator intBinaryOperator, int a, int b)
+    {
+        Console.writeLine(intBinaryOperator.applyAsInt(a, b));
+    }
 }
+
+interface IIntBinaryOperator {
+    int applyAsInt(int a, int b);
+}
+
+
 
