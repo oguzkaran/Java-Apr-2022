@@ -1,36 +1,35 @@
 /*-----------------------------------------------------------------------------------------------------------------------
-    Aşağıddaki örnekte ArrayLiğst'in Integer ve String açılımları kullanılmıştır. Integer açılımında eleman eklenirkenü
-    "boxing", eleman alınırken de "unboxing" yapıldığına dikkat ediniz. String açılımı için böyle bir yoktur
+    Generic bir arayüzün herhngi bir açılımını implemente eden bir sınıf içerisinde arayüzün metotları açılıma uygun şekilde
+    override edilmelidir
 -----------------------------------------------------------------------------------------------------------------------*/
 package org.csystem.app;
-
-import org.csystem.util.string.StringUtil;
-
-import java.util.ArrayList;
-import java.util.Random;
 
 class App {
     public static void main(String[] args)
     {
-        ArrayList<String> texts = new ArrayList<>();
-        ArrayList<Integer> numbers = new ArrayList<>();
-        Random random = new Random();
+        Sample s = new Sample();
+        Mample m = new Mample();
 
-        for (int i = 0; i < 10; ++i) {
-            texts.add(StringUtil.getRandomTextTR(random, random.nextInt(4, 7)));
-            numbers.add(random.nextInt(100));
-        }
-
-        for (String text : texts)
-            System.out.println(text);
-
-        System.out.println("-------------------------------------------------------------------");
-
-        for (int val : numbers)
-            System.out.printf("%d ", val);
-
-        System.out.println();
+        s.foo("ankara");
+        m.foo(true);
     }
 }
 
+class Mample implements IX<Boolean> {
+    public void foo(Boolean b)
+    {
+        System.out.println(b);
+    }
 
+}
+
+class Sample implements IX<String> {
+    public void foo(String s)
+    {
+        System.out.println(s);
+    }
+}
+
+interface IX<T> {
+    void foo(T t);
+}
