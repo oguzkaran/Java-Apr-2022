@@ -1,7 +1,7 @@
 /*------------------------------------------------------------------
 	FILE		: NumberUtil.java
 	AUTHOR		: Java-Apr-2022 Group
-	LAST UPDATE	: 01.12.2022
+	LAST UPDATE	: 18.04.2023
 	
 	NumberUtil class for numeric operations
 	
@@ -328,7 +328,8 @@ public final class NumberUtil {
 
 	public static String numToTextTR(long val)
 	{
-		throw new UnsupportedOperationException("TODO:");
+		//TODO:
+		return numToText3DigitsTR((int)val);
 	}
 
 	public static void printCollatz(int n)
