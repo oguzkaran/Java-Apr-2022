@@ -1,7 +1,7 @@
 /*------------------------------------------------------------------
 	FILE		: StringUtil.java
 	AUTHOR		: Java-Apr-2022 Group
-	LAST UPDATE	: 12.12.2022
+	LAST UPDATE	: 19.04.2023
 	
 	StringUtil class for string operations
 	
@@ -274,22 +274,21 @@ public final class StringUtil {
         return result.substring(0, result.length() - delimiter.length());
     }
 
-    public static String join(ArrayList list, String delimiter)
+    public static String join(ArrayList<String> list, String delimiter)
     {
         String result = "";
 
-        for (Object o : list)
-            result += (String)o + delimiter;
+        for (String s : list)
+            result += s + delimiter;
 
         return result.substring(0, result.length() - delimiter.length());
     }
 
-    public static String join(ArrayList list, String delimiter, boolean removeBlanks)
+    public static String join(ArrayList<String> list, String delimiter, boolean removeBlanks)
     {
         String result = "";
 
-        for (Object o : list) {
-            String s = (String)o;
+        for (String s : list) {
             if (removeBlanks && s.isBlank())
                 continue;
 
