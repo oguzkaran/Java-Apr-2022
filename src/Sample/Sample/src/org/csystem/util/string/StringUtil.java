@@ -1,7 +1,7 @@
 /*------------------------------------------------------------------
 	FILE		: StringUtil.java
 	AUTHOR		: Java-Apr-2022 Group
-	LAST UPDATE	: 19.04.2023
+	LAST UPDATE	: 28.04.2023
 	
 	StringUtil class for string operations
 	
@@ -16,12 +16,21 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public final class StringUtil {
-    private static final String ALPHABET_TR = "abcçdefgğhıijklmnoöprsştuüvyz";
-    private static final String ALPHABET_EN = "abcdefghijklmnopqrstuwxvyz";
-    private static final String ALPHABET_CAPITAL_TR = "ABCÇDEFGĞHIİJKLMNOÖPRSŞTUÜVYZ";
-    private static final String ALPHABET_CAPITAL_EN = "ABCDEFGHIJKLMNOPQRSTUWXVYZ";
-    private static final String ALPHABET_ALL_TR = ALPHABET_TR + ALPHABET_CAPITAL_TR;
-    private static final String ALPHABET_ALL_EN = ALPHABET_EN + ALPHABET_CAPITAL_EN;
+    private static final String ALPHABET_TR;
+    private static final String ALPHABET_EN;
+    private static final String ALPHABET_CAPITAL_TR;
+    private static final String ALPHABET_CAPITAL_EN;
+    private static final String ALPHABET_ALL_TR;
+    private static final String ALPHABET_ALL_EN;
+
+    static {
+        ALPHABET_TR= "abcçdefgğhıijklmnoöprsştuüvyz";
+        ALPHABET_EN = "abcdefghijklmnopqrstuwxvyz";
+        ALPHABET_CAPITAL_TR = "ABCÇDEFGĞHIİJKLMNOÖPRSŞTUÜVYZ";
+        ALPHABET_CAPITAL_EN =  "ABCDEFGHIJKLMNOPQRSTUWXVYZ";
+        ALPHABET_ALL_TR = ALPHABET_TR + ALPHABET_CAPITAL_TR;
+        ALPHABET_ALL_EN = ALPHABET_EN + ALPHABET_CAPITAL_EN;
+    }
 
     private StringUtil()
     {}

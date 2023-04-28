@@ -1,7 +1,7 @@
 /*------------------------------------------------------------------
 	FILE		: Console.java
 	AUTHOR		: Java-Apr-2022 Group
-	LAST UPDATE	: 31.01.20223
+	LAST UPDATE	: 28.04.2023
 
 	Utility Console class for standard input (stdin) and
 	standard output (stdout)
@@ -14,7 +14,11 @@ package org.csystem.util.console;
 import java.util.Scanner;
 
 public final class Console {
-    private static final Scanner ms_kb = new Scanner(System.in);
+    private static final Scanner KB;
+
+    static {
+        KB = new Scanner(System.in);
+    }
     private Console()
     {
     }
@@ -36,7 +40,7 @@ public final class Console {
             try {
                 System.out.print(prompt);
 
-                return Integer.parseInt(ms_kb.nextLine());
+                return Integer.parseInt(KB.nextLine());
             }
             catch (NumberFormatException ignore) {
                 System.out.print(errorPrompt);
@@ -71,7 +75,7 @@ public final class Console {
             try {
                 System.out.print(prompt);
 
-                return Double.parseDouble(ms_kb.nextLine());
+                return Double.parseDouble(KB.nextLine());
             }
             catch (NumberFormatException ignore) {
                 System.out.print(errorPrompt);
@@ -106,7 +110,7 @@ public final class Console {
             try {
                 System.out.print(prompt);
 
-                return Long.parseLong(ms_kb.nextLine());
+                return Long.parseLong(KB.nextLine());
             }
             catch (NumberFormatException ignore) {
                 System.out.print(errorPrompt);
@@ -170,7 +174,7 @@ public final class Console {
     {
         write(prompt);
 
-        return ms_kb.nextLine();
+        return KB.nextLine();
     }
 
     public static String readLine(String prompt)
